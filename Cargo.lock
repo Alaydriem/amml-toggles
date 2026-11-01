@@ -819,7 +819,7 @@ dependencies = [
 
 [[package]]
 name = "toggles-amml"
-version = "0.1.0"
+version = "26.60.0"
 dependencies = [
  "amm-abi",
  "amm-client",
@@ -834,7 +834,7 @@ dependencies = [
 
 [[package]]
 name = "toggles-core"
-version = "0.1.0"
+version = "26.60.0"
 
 [[package]]
 name = "tracing"

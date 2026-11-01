@@ -37,7 +37,7 @@ manager.
 
 | Toggles | Minecraft Bedrock | Mod Manager |
 | --- | --- | --- |
-| 0.1.0 | 1.26.60 | ABI 2.1 |
+| 26.60.0 | 1.26.60 | ABI 2.1 |
 
 ## Controls
 

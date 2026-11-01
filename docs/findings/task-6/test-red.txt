@@ -1,0 +1,169 @@
+[test] $ cargo nextest run --workspace
+   Compiling toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+warning: fields `sneak` and `walk` are never read
+ --> toggles\core\src\services\toggle_controller.rs:6:5
+  |
+5 | pub struct ToggleController {
+  |            ---------------- fields in this struct
+6 |     sneak: Option<u32>,
+  |     ^^^^^
+7 |     walk: Option<u32>,
+  |     ^^^^
+  |
+  = note: `ToggleController` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `toggles-core` (lib) generated 1 warning
+warning: `toggles-core` (lib test) generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.62s
+────────────
+ Nextest run ID 827b7804-6947-4c31-be56-0844a6bc82ee with nextest profile: default
+    Starting 17 tests across 3 binaries
+        FAIL [   0.016s] ( 1/17) toggles-core::integration services::toggle_controller::chord_ignored_outside_gameplay
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::chord_ignored_outside_gameplay ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::chord_ignored_outside_gameplay
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::chord_ignored_outside_gameplay' (44028) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+  Cancelling due to test failure: 7 tests still running
+        FAIL [   0.021s] ( 2/17) toggles-core::integration services::toggle_controller::focus_lost_always_resets
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::focus_lost_always_resets ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::focus_lost_always_resets
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::focus_lost_always_resets' (50056) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.028s] ( 3/17) toggles-core::integration services::toggle_controller::disabling_walk_while_on_releases
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::disabling_walk_while_on_releases ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::disabling_walk_while_on_releases
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::disabling_walk_while_on_releases' (43320) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.035s] ( 4/17) toggles-core::integration services::toggle_controller::death_reset_respects_setting
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::death_reset_respects_setting ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::death_reset_respects_setting
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::death_reset_respects_setting' (8884) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.039s] ( 5/17) toggles-core::integration services::toggle_controller::chord_ignored_when_disabled
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::chord_ignored_when_disabled ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::chord_ignored_when_disabled
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::chord_ignored_when_disabled' (48124) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        PASS [   0.045s] ( 6/17) toggles-core::integration config::toggles_config::default_matches_spec
+        FAIL [   0.052s] ( 7/17) toggles-core::integration services::toggle_controller::d_does_not_cancel_walk
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::d_does_not_cancel_walk ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::d_does_not_cancel_walk
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::d_does_not_cancel_walk' (56836) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        FAIL [   0.059s] ( 8/17) toggles-core::integration services::toggle_controller::game_key_change_releases_old_key
+  stdout ───
+
+    running 1 test
+    test services::toggle_controller::game_key_change_releases_old_key ... FAILED
+
+    failures:
+
+    failures:
+        services::toggle_controller::game_key_change_releases_old_key
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 16 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggle_controller::game_key_change_releases_old_key' (54924) panicked at toggles\core\src\services\toggle_controller.rs:21:9:
+    not yet implemented
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+────────────
+     Summary [   0.059s] 8/17 tests run: 1 passed, 7 failed, 0 skipped
+        FAIL [   0.016s] ( 1/17) toggles-core::integration services::toggle_controller::chord_ignored_outside_gameplay
+        FAIL [   0.021s] ( 2/17) toggles-core::integration services::toggle_controller::focus_lost_always_resets
+        FAIL [   0.028s] ( 3/17) toggles-core::integration services::toggle_controller::disabling_walk_while_on_releases
+        FAIL [   0.035s] ( 4/17) toggles-core::integration services::toggle_controller::death_reset_respects_setting
+        FAIL [   0.039s] ( 5/17) toggles-core::integration services::toggle_controller::chord_ignored_when_disabled
+        FAIL [   0.052s] ( 7/17) toggles-core::integration services::toggle_controller::d_does_not_cancel_walk
+        FAIL [   0.059s] ( 8/17) toggles-core::integration services::toggle_controller::game_key_change_releases_old_key
+warning: 9/17 tests were not run due to test failure (run with --no-fail-fast to run all tests, or run with --max-fail)
+error: test run failed
+[test] ERROR task failed

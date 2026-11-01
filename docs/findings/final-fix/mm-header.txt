@@ -1,0 +1,13 @@
+[header-check] $ cbindgen --verify --config crates/amm-abi/cbindgen.toml --crate amm-abi --output include/alaydriem_mod_manager.h crates/amm-abi
+WARN: Skip amm-abi::PHASE_PRESSED - (not `pub`).
+WARN: Skip amm-abi::PHASE_RELEASED - (not `pub`).
+WARN: Skip amm-abi::PHASE_REPEAT - (not `pub`).
+WARN: Skip amm-abi::KEY_DOWN_BIT - (not `pub`).
+WARN: Skip amm-abi::KEY_REPEAT_BIT - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).
+WARN: Skip amm-abi::BASE_SIZE - (not `pub`).

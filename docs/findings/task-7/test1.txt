@@ -1,0 +1,28 @@
+[test] $ cargo nextest run --workspace
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+error[E0533]: expected unit struct, unit variant or constant, found struct variant `ModEvent::SettingsChanged`
+   --> toggles\amml\src\services\toggles_runtime.rs:203:17
+    |
+203 |                 ModEvent::SettingsChanged => {
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^ not a unit struct, unit variant or constant
+    |
+help: the struct variant's field is being ignored
+    |
+203 |                 ModEvent::SettingsChanged { paths: _ } => {
+    |                                           ++++++++++++
+
+error: implementation of `FnOnce` is not general enough
+  --> toggles\amml\src\services\game_client.rs:58:9
+   |
+58 |         self.with_client(ClientInstance::mouse_grabbed).unwrap_or(false)
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ implementation of `FnOnce` is not general enough
+   |
+   = note: `for<'a> fn(&'a ClientInstance<'2>) -> bool {ClientInstance::<'2>::mouse_grabbed}` must implement `FnOnce<(&ClientInstance<'1>,)>`, for any lifetime `'1`...
+   = note: ...but it actually implements `FnOnce<(&ClientInstance<'2>,)>`, for some specific lifetime `'2`
+
+For more information about this error, try `rustc --explain E0533`.
+error: could not compile `toggles-amml` (lib test) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `toggles-amml` (lib) due to 2 previous errors
+error: command `'C:\Users\charl\.rustup\toolchains\1.98.0-x86_64-pc-windows-msvc\bin\cargo.exe' test --no-run --message-format json-render-diagnostics --workspace` exited with code 101
+[test] ERROR task failed

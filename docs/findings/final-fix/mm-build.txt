@@ -1,0 +1,12 @@
+[build-mod] $ cargo build --release -p amm-amml
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-store v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-store)
+   Compiling amm-ui v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ui)
+   Compiling amm-ffi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ffi)
+   Compiling amm-overlay v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-overlay)
+   Compiling amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+    Finished `release` profile [optimized] target(s) in 18.20s
+built dist/alaydriem-mod-manager

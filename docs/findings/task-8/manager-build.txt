@@ -1,0 +1,3 @@
+[build-mod] $ cargo build --release -p amm-amml
+    Finished `release` profile [optimized] target(s) in 0.55s
+built dist/alaydriem-mod-manager

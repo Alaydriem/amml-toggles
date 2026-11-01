@@ -1,0 +1,93 @@
+[test] $ cargo nextest run --workspace --no-tests=pass
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+error[E0599]: no method named `watch_keys` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:505:21
+    |
+505 |     assert_eq!(link.watch_keys(&[0x57, 0x41, 0x53]), Ok(()));
+    |                     ^^^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `watched` found for mutable reference `&mut FakeState` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:506:46
+    |
+506 |     assert_eq!(FakeTable::with(|state| state.watched()), vec![0x57, 0x41, 0x53]);
+    |                                              ^^^^^^^ method not found in `&mut FakeState`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:508:21
+    |
+508 |     assert_eq!(link.watch_keys(&[]), Ok(()));
+    |                     ^^^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `watched` found for mutable reference `&mut FakeState` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:509:43
+    |
+509 |     assert!(FakeTable::with(|state| state.watched()).is_empty());
+    |                                           ^^^^^^^ method not found in `&mut FakeState`
+
+error[E0599]: no method named `send_key` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:516:21
+    |
+516 |     assert_eq!(link.send_key(0x10, true), Ok(()));
+    |                     ^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `send_key` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:517:21
+    |
+517 |     assert_eq!(link.send_key(0x10, false), Ok(()));
+    |                     ^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `sent_keys` found for mutable reference `&mut FakeState` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:519:46
+    |
+519 |     assert_eq!(FakeTable::with(|state| state.sent_keys()), vec![(0x10, true), (0x10, false)]);
+    |                                              ^^^^^^^^^ method not found in `&mut FakeState`
+
+error[E0599]: no associated function or constant named `api_minor_0` found for struct `FakeTable` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:524:60
+    |
+524 |     let link = FakeTable::link_without_frame_on(FakeTable::api_minor_0());
+    |                                                            ^^^^^^^^^^^ associated function or constant not found in `FakeTable`
+
+error[E0599]: no method named `send_key` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:526:21
+    |
+526 |     assert_eq!(link.send_key(0x10, true), Err(LinkError::Status(AmmStatus::Unsupported as i32)));
+    |                     ^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:527:21
+    |
+527 |     assert_eq!(link.watch_keys(&[0x57]), Err(LinkError::Status(AmmStatus::Unsupported as i32)));
+    |                     ^^^^^^^^^^ method not found in `ManagerLink`
+
+error[E0599]: no method named `sent_keys` found for mutable reference `&mut FakeState` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:528:43
+    |
+528 |     assert!(FakeTable::with(|state| state.sent_keys().is_empty() && state.watched().is_empty()));
+    |                                           ^^^^^^^^^ method not found in `&mut FakeState`
+
+error[E0599]: no method named `watched` found for mutable reference `&mut FakeState` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:528:75
+    |
+528 |     assert!(FakeTable::with(|state| state.sent_keys().is_empty() && state.watched().is_empty()));
+    |                                                                           ^^^^^^^ method not found in `&mut FakeState`
+
+error[E0609]: no field `send_key_status` on type `&mut FakeState`
+   --> crates\amm-client\tests\link\manager_link.rs:534:35
+    |
+534 |     FakeTable::with(|state| state.send_key_status = AmmStatus::NotPermitted);
+    |                                   ^^^^^^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `register_status`, `handle`, `descriptor`, `config_dir`, `callbacks` ... and 39 others
+
+error[E0599]: no method named `send_key` found for struct `ManagerLink` in the current scope
+   --> crates\amm-client\tests\link\manager_link.rs:536:21
+    |
+536 |     assert_eq!(link.send_key(0x10, true), Err(LinkError::Status(AmmStatus::NotPermitted as i32)));
+    |                     ^^^^^^^^ method not found in `ManagerLink`
+
+Some errors have detailed explanations: E0599, E0609.
+For more information about an error, try `rustc --explain E0599`.
+error: could not compile `amm-client` (test "integration") due to 14 previous errors
+error: command `'C:\Users\charl\.rustup\toolchains\1.98.0-x86_64-pc-windows-msvc\bin\cargo.exe' test --no-run --message-format json-render-diagnostics --workspace` exited with code 101
+[test] ERROR task failed

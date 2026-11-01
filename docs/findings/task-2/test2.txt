@@ -1,0 +1,562 @@
+[test] $ cargo nextest run --workspace --no-tests=pass
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-ui v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ui)
+   Compiling amm-store v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-store)
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+   Compiling amm-ffi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ffi)
+   Compiling amm-overlay v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-overlay)
+   Compiling amm-bench v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-bench)
+   Compiling amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+   Compiling amm-e2e v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-e2e)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.35s
+────────────
+ Nextest run ID e4f9ad29-f151-4e4a-a4b7-c505f5b13c09 with nextest profile: default
+    Starting 1017 tests across 21 binaries
+        PASS [   0.019s] (   1/1017) amm-abi::integration convert::event::an_unknown_capability_byte_is_rejected
+        PASS [   0.021s] (   2/1017) amm-abi::integration convert::acquire::denied_carries_the_holder_and_the_others_carry_no_holder
+        PASS [   0.023s] (   3/1017) amm-abi::integration convert::frame::every_cursor_byte_in_range_converts_to_the_matching_core_shape
+        PASS [   0.030s] (   4/1017) amm-abi::integration convert::capability::capability_byte_out_of_range_is_rejected
+        PASS [   0.034s] (   5/1017) amm-abi::integration convert::event::every_event_kind_survives_core_to_abi_to_core
+        PASS [   0.040s] (   6/1017) amm-abi::integration convert::event::an_unknown_phase_byte_is_rejected
+        PASS [   0.045s] (   7/1017) amm-abi::integration convert::acquire::every_outcome_survives_core_to_abi_to_core
+        PASS [   0.050s] (   8/1017) amm-abi::integration convert::frame::a_bad_cursor_byte_is_rejected
+        PASS [   0.062s] (   9/1017) amm-abi::integration convert::frame::frame_output_with_bad_wants_or_cursor_is_rejected
+        PASS [   0.065s] (  10/1017) amm-abi::integration convert::frame::frame_output_with_good_values_converts
+        PASS [   0.068s] (  11/1017) amm-abi::integration convert::frame::frame_output_with_size_below_base_is_invalid
+        PASS [   0.068s] (  12/1017) amm-abi::integration convert::log_level::log_level_byte_out_of_range_is_rejected
+        PASS [   0.068s] (  13/1017) amm-abi::integration convert::mesh::a_draw_cmd_with_a_bad_sampler_byte_is_rejected
+        PASS [   0.068s] (  14/1017) amm-abi::integration convert::mesh::a_texture_delta_with_a_bad_sampler_or_full_byte_is_rejected
+        PASS [   0.070s] (  15/1017) amm-abi::integration convert::mesh::an_empty_mesh_reports_zero_counts
+        PASS [   0.071s] (  16/1017) amm-abi::integration convert::mesh::mesh_view_borrows_the_buffers_without_copying
+        PASS [   0.045s] (  17/1017) amm-abi::integration convert::screenshot_layers::a_layers_byte_other_than_0_or_1_is_rejected
+        PASS [   0.045s] (  18/1017) amm-abi::integration convert::status::a_missing_manager_status_becomes_a_missing_manager_link_error
+        PASS [   0.045s] (  19/1017) amm-abi::integration convert::status::a_status_integer_converts_back_and_an_unknown_one_is_rejected
+        PASS [   0.043s] (  20/1017) amm-abi::integration convert::status::any_other_status_keeps_its_code_in_the_link_error
+        PASS [   0.045s] (  21/1017) amm-abi::integration convert::status::capture_errors_map_to_their_status_and_busy_has_its_own
+        PASS [   0.044s] (  22/1017) amm-abi::integration convert::status::descriptor_errors_map_to_invalid_descriptor
+        PASS [   0.043s] (  23/1017) amm-abi::integration convert::status::manager_errors_delegate_to_the_inner_mapping
+        PASS [   0.041s] (  24/1017) amm-abi::integration convert::status::registry_errors_map_to_their_own_status
+        PASS [   0.042s] (  25/1017) amm-abi::integration types::layout::abi_draw_cmd_and_ui_event_field_offsets_match_core
+        PASS [   0.043s] (  26/1017) amm-abi::integration types::layout::abi_draw_cmd_matches_core_draw_cmd_layout
+        PASS [   0.046s] (  27/1017) amm-abi::integration types::layout::abi_texture_delta_matches_core_texture_delta_layout
+        PASS [   0.045s] (  28/1017) amm-abi::integration types::layout::abi_ui_event_matches_core_ui_event_layout
+        PASS [   0.043s] (  29/1017) amm-abi::integration types::layout::abi_vertex_matches_core_vertex_layout
+        PASS [   0.043s] (  30/1017) amm-abi::integration types::layout::api_table_field_offsets_are_stable
+        PASS [   0.043s] (  31/1017) amm-abi::integration types::layout::callbacks_layout_is_stable
+        PASS [   0.045s] (  32/1017) amm-abi::integration types::layout::capture_stream_frame_layout_is_stable
+        PASS [   0.043s] (  33/1017) amm-abi::integration types::layout::capture_stream_request_layout_is_stable
+        PASS [   0.043s] (  34/1017) amm-abi::integration types::layout::draw_cmd_layout_is_stable
+        PASS [   0.041s] (  35/1017) amm-abi::integration types::layout::enum_values_match_their_mirrors
+        PASS [   0.041s] (  36/1017) amm-abi::integration types::layout::event_layout_is_stable
+        PASS [   0.041s] (  37/1017) amm-abi::integration types::layout::frame_input_layout_is_stable
+        PASS [   0.041s] (  38/1017) amm-abi::integration types::layout::frame_output_layout_is_stable
+        PASS [   0.041s] (  39/1017) amm-abi::integration types::layout::mesh_view_layout_is_stable
+        PASS [   0.039s] (  40/1017) amm-abi::integration types::layout::render_size_state_layout_is_stable
+        PASS [   0.039s] (  41/1017) amm-abi::integration types::layout::sized_structs_end_without_tail_padding
+        PASS [   0.039s] (  42/1017) amm-abi::integration types::layout::sized_structs_start_with_size_and_base_fits
+        PASS [   0.038s] (  43/1017) amm-abi::integration types::layout::small_value_types_layout_is_stable
+        PASS [   0.039s] (  44/1017) amm-abi::integration types::layout::texture_delta_layout_is_stable
+        PASS [   0.039s] (  45/1017) amm-abi::integration types::layout::ui_event_layout_is_stable
+        PASS [   0.041s] (  46/1017) amm-abi::integration types::layout::vertex_layout_is_stable
+        PASS [   0.039s] (  47/1017) amm-abi::integration types::layout::wire_values_are_stable
+        PASS [   0.046s] (  48/1017) amm-amml::integration dup_guard::a_copy_loaded_under_another_name_stays_off
+        PASS [   0.065s] (  49/1017) amm-amml::integration dll_exports::the_dll_exports_only_the_api_getter_and_the_amml_entry_points
+        PASS [   0.058s] (  50/1017) amm-amml::integration game_hooks::grab::the_game_grab_is_skipped_while_the_cursor_is_free_and_its_this_is_kept
+        PASS [   0.102s] (  51/1017) amm-amml::integration api_export::a_client_finds_the_table_of_the_dll_loaded_under_the_manager_name
+        PASS [   0.047s] (  52/1017) amm-amml::integration game_hooks::keys::a_consumed_key_never_reaches_the_game
+        PASS [   0.036s] (  53/1017) amm-amml::integration game_hooks::keys::a_key_the_host_leaves_reaches_the_game_unchanged
+        PASS [   0.022s] (  54/1017) amm-amml::integration game_hooks::mouse::a_consumed_button_is_cancelled_and_a_free_one_passes_with_the_viewport_point
+        PASS [   0.018s] (  55/1017) amm-amml::integration game_hooks::mouse::a_consumed_movement_is_cancelled
+        PASS [   0.109s] (  56/1017) amm-amml::integration dup_guard::enable_starts_when_this_copy_is_the_one_mods_find
+        PASS [   0.028s] (  57/1017) amm-amml::integration game_hooks::tick::a_panic_in_the_tick_calls_the_original_once_and_switches_the_manager_off
+        PASS [   0.030s] (  58/1017) amm-amml::integration game_hooks::tick::a_tick_runs_after_the_original_and_readies_the_overlay
+        PASS [   0.108s] (  59/1017) amm-amml::integration dup_guard::the_copy_mods_find_passes
+        PASS [   0.047s] (  60/1017) amm-amml::integration game_hooks::turn::the_turn_is_dropped_while_the_host_blocks_it
+        PASS [   0.157s] (  61/1017) amm-amml::integration dup_guard::a_second_copy_from_another_folder_names_the_first_and_stays_off
+        PASS [   0.052s] (  62/1017) amm-amml::integration game_hooks::world::a_loaded_world_reaches_the_host_before_the_original
+        PASS [   0.049s] (  63/1017) amm-amml::integration game_hooks::world::leaving_a_world_reaches_the_host_before_the_original_and_forgets_the_client
+        PASS [   0.155s] (  64/1017) amm-amml::integration dup_guard::enable_stays_off_when_a_manager_loaded_first_and_this_copy_came_after
+        PASS [   0.050s] (  65/1017) amm-amml::integration manager_mod::the_manifest_lists_every_hooked_and_called_entry
+        PASS [   0.050s] (  66/1017) amm-amml::integration manager_mod::the_manifest_names_the_mod_and_the_dll_mods_look_for
+        PASS [   0.058s] (  67/1017) amm-amml::integration services::frame_state::nothing_is_published_while_the_latch_is_raised
+        PASS [   0.040s] (  68/1017) amm-amml::integration services::frame_state::the_safe_state_is_published_once_until_a_frame_runs_again
+        PASS [   0.036s] (  69/1017) amm-amml::integration services::game_hook_set::a_missing_optional_entry_logs_one_line_and_the_rest_install
+        PASS [   0.039s] (  70/1017) amm-amml::integration services::game_hook_set::a_missing_required_entry_fails_and_installs_nothing
+        PASS [   0.040s] (  71/1017) amm-amml::integration services::game_hook_set::a_refused_hook_removes_every_hook_already_installed
+        PASS [   0.044s] (  72/1017) amm-amml::integration services::game_hook_set::removing_a_group_unhooks_only_that_group
+        PASS [   0.048s] (  73/1017) amm-amml::integration services::game_pointer::a_minimised_window_moves_nothing
+        PASS [   0.048s] (  74/1017) amm-amml::integration services::game_pointer::outside_the_viewport_or_before_a_bind_nothing_moves
+        PASS [   0.043s] (  75/1017) amm-amml::integration services::game_pointer::the_host_gets_the_buffer_point_and_client_size_and_its_point_is_used_as_it_is
+        PASS [   0.041s] (  76/1017) amm-amml::integration services::game_slots::a_missing_get_options_logs_one_line_and_only_hide_hud_is_off
+        PASS [   0.041s] (  77/1017) amm-amml::integration services::game_slots::a_missing_required_slot_fails_and_keeps_nothing
+        PASS [   0.014s] (  78/1017) amm-amml::integration services::key_state::a_focus_loss_forgets_the_held_keys
+        PASS [   0.042s] (  79/1017) amm-amml::integration services::hud_control::a_player_who_hid_the_hud_keeps_it_hidden
+        PASS [   0.041s] (  80/1017) amm-amml::integration services::hud_control::restore_puts_the_saved_value_back_once
+        PASS [   0.042s] (  81/1017) amm-amml::integration services::hud_control::the_players_setting_comes_back_after_hide_vanilla_hud_turns_off
+        PASS [   0.042s] (  82/1017) amm-amml::integration services::hud_control::without_options_the_hud_is_untouched
+        PASS [   0.070s] (  83/1017) amm-amml::integration services::game_slots::every_optional_slot_names_its_feature
+        PASS [   0.042s] (  84/1017) amm-amml::integration services::key_state::a_held_key_repeats_on_the_second_down
+        PASS [   0.043s] (  85/1017) amm-amml::integration services::key_state::left_shift_down_then_up_is_shift_down_and_up_with_no_repeat
+        PASS [   0.041s] (  86/1017) amm-amml::integration services::key_state::the_host_answer_decides_the_consume
+        PASS [   0.042s] (  87/1017) amm-amml::integration services::manager_input_sink::the_cursor_is_the_one_of_the_last_host_frame
+        PASS [   0.076s] (  88/1017) amm-amml::integration services::manager_lifecycle::a_router_that_did_not_drain_keeps_the_host_alive
+        PASS [   0.074s] (  89/1017) amm-amml::integration services::manager_lifecycle::an_enable_that_fails_on_a_hook_after_a_leak_logs_why_the_host_stays
+        PASS [   0.096s] (  90/1017) amm-amml::integration services::manager_lifecycle::a_leaked_overlay_keeps_the_host_and_the_next_enable_reuses_it
+        PASS [   0.098s] (  91/1017) amm-amml::integration services::manager_lifecycle::a_mod_that_unregisters_after_the_host_is_destroyed_gets_manager_missing
+        PASS [   0.090s] (  92/1017) amm-amml::integration services::manager_lifecycle::an_enable_that_fails_on_a_hook_stops_the_host_it_started
+        PASS [   0.091s] (  93/1017) amm-amml::integration services::manager_lifecycle::disable_closes_the_render_size_before_the_overlay_and_posts_the_restore_after_it
+        PASS [   0.094s] (  94/1017) amm-amml::integration services::manager_lifecycle::disable_drains_every_call_before_the_host_stops
+        PASS [   0.092s] (  95/1017) amm-amml::integration services::manager_lifecycle::disable_posts_no_restore_when_nothing_was_forced
+        PASS [   0.047s] (  96/1017) amm-amml::integration services::manager_lifecycle::disable_posts_the_restore_when_the_overlay_leaked
+        PASS [   0.047s] (  97/1017) amm-amml::integration services::manager_lifecycle::enable_starts_the_host_before_any_hook
+        PASS [   0.048s] (  98/1017) amm-amml::integration services::manager_lifecycle::nothing_is_restored_once_the_game_stopped_ticking
+        PASS [   0.045s] (  99/1017) amm-amml::integration services::manager_lifecycle::nothing_is_restored_when_the_game_never_ticked
+        PASS [   0.043s] ( 100/1017) amm-amml::integration services::manager_lifecycle::the_mouse_stays_free_when_the_window_is_in_the_background
+        PASS [   0.039s] ( 101/1017) amm-amml::integration services::menu_screen::the_pause_screen_gives_2_and_its_string_is_freed_once
+        PASS [   0.038s] ( 102/1017) amm-amml::integration services::menu_screen::the_start_screen_gives_1_and_any_other_screen_0
+        PASS [   0.038s] ( 103/1017) amm-amml::integration services::menu_screen::without_the_entry_the_screen_is_0_and_nothing_is_freed
+        PASS [   0.038s] ( 104/1017) amm-amml::integration services::mouse_grab::a_cursor_change_in_a_menu_releases_nothing_and_the_same_change_in_play_does
+        PASS [   0.039s] ( 105/1017) amm-amml::integration services::mouse_grab::nothing_is_applied_before_the_game_grabbed_once_or_while_the_latch_is_raised
+        PASS [   0.040s] ( 106/1017) amm-amml::integration services::mouse_grab::restore_grabs_once_when_the_manager_had_freed_the_cursor
+        PASS [   0.038s] ( 107/1017) amm-amml::integration services::mouse_grab::the_game_grab_is_skipped_only_while_the_cursor_is_free
+        PASS [   0.038s] ( 108/1017) amm-amml::integration services::mouse_input::a_button_the_window_router_consumed_is_cancelled
+        PASS [   0.041s] ( 109/1017) amm-amml::integration services::mouse_input::a_move_reaches_the_host_as_its_delta
+        PASS [   0.041s] ( 110/1017) amm-amml::integration services::mouse_input::inside_a_game_viewport_the_position_is_moved
+        PASS [   0.042s] ( 111/1017) amm-amml::integration services::tick_service::a_tick_counts_as_recent_only_inside_the_window
+        PASS [   0.041s] ( 112/1017) amm-amml::integration services::tick_service::leaving_a_world_tells_the_host_and_forgets_the_client
+        PASS [   0.043s] ( 113/1017) amm-bench::integration fixtures::chord_table::the_hit_chord_matches_and_the_miss_chord_does_not
+        PASS [   0.057s] ( 114/1017) amm-bench::integration fixtures::bench_host::a_forced_size_sends_its_size_message_and_then_keeps_quiet
+        PASS [   0.051s] ( 115/1017) amm-bench::integration fixtures::client_rect_probe::the_hidden_window_reports_its_client_size
+        PASS [   0.079s] ( 116/1017) amm-bench::integration fixtures::bench_host::overlay_clients_each_get_a_layer_with_all_their_vertices
+        PASS [   0.068s] ( 117/1017) amm-bench::integration fixtures::eight_mods::an_unbound_key_reaches_no_keybind
+        PASS [   0.066s] ( 118/1017) amm-bench::integration fixtures::eight_mods::eight_mods_register_and_a_bound_key_reaches_a_keybind
+        PASS [   0.066s] ( 119/1017) amm-bench::integration fixtures::eight_mods::releasing_and_reacquiring_the_overlay_changes_the_layer_count
+        PASS [   0.131s] ( 120/1017) amm-bench::integration fixtures::bench_host::a_denied_camera_leaves_one_toast_and_the_panel_layer
+        PASS [   0.070s] ( 121/1017) amm-bench::zero_alloc a_world_draw_client_without_a_frame_callback_allocates_nothing_in_a_steady_frame
+        PASS [   0.045s] ( 122/1017) amm-client::integration bridge::clipboard_worker::a_copy_over_1_mib_is_refused
+        PASS [   0.022s] ( 123/1017) amm-client::integration bridge::clipboard_worker::a_full_queue_refuses_the_request_and_does_not_block
+        PASS [   0.025s] ( 124/1017) amm-client::integration bridge::clipboard_worker::a_paste_over_64_kib_is_cut_on_a_char_boundary
+        PASS [   0.023s] ( 125/1017) amm-client::integration bridge::clipboard_worker::a_paste_result_that_is_not_taken_keeps_its_slot_and_the_next_is_dropped
+        PASS [   0.022s] ( 126/1017) amm-client::integration bridge::clipboard_worker::a_paste_returns_the_clipboard_text_to_the_layer_that_asked
+        PASS [   0.020s] ( 127/1017) amm-client::integration bridge::clipboard_worker::copied_text_reaches_the_clipboard
+        PASS [   0.022s] ( 128/1017) amm-client::integration bridge::egui_frame::a_layer_context_has_the_amml_ui_faces_only
+        PASS [   0.031s] ( 129/1017) amm-client::integration bridge::egui_frame::a_panic_in_one_layer_resets_only_that_layer
+        PASS [   0.023s] ( 130/1017) amm-client::integration bridge::egui_frame::frame_output_points_at_physical_pixel_vertices
+        PASS [   0.141s] ( 131/1017) amm-bench::zero_alloc one_egui_client_pass_allocation_count_is_reported
+        PASS [   0.051s] ( 132/1017) amm-client::integration bridge::egui_frame::dropping_the_frame_joins_the_worker
+        PASS [   0.024s] ( 133/1017) amm-client::integration bridge::egui_frame::new_context_runs_once_per_context_and_again_after_textures_lost
+        PASS [   0.024s] ( 134/1017) amm-client::integration bridge::egui_frame::raw_input_reaches_only_the_layer_that_has_the_pointer
+        PASS [   0.025s] ( 135/1017) amm-client::integration bridge::frame_trampoline::a_null_input_is_a_null_pointer_status
+        PASS [   0.029s] ( 136/1017) amm-client::integration bridge::egui_frame::two_layers_of_one_client_never_send_the_same_texture_id
+        PASS [   0.031s] ( 137/1017) amm-client::integration bridge::egui_frame::textures_lost_resends_the_font_atlas_of_both_layers
+        PASS [   0.025s] ( 138/1017) amm-client::integration bridge::frame_trampoline::a_panic_payload_that_panics_when_dropped_still_returns_panic_status
+        PASS [   0.014s] ( 139/1017) amm-client::integration bridge::frame_trampoline::frame_with_input_size_below_base_is_invalid_and_runs_no_pass
+        PASS [   0.016s] ( 140/1017) amm-client::integration bridge::frame_trampoline::frame_with_output_size_below_base_is_invalid_and_writes_nothing
+        PASS [   0.023s] ( 141/1017) amm-client::integration bridge::frame_trampoline::panicking_frame_handler_returns_panic_status_and_does_not_unwind
+        PASS [   0.035s] ( 142/1017) amm-client::integration bridge::layer_context::a_focused_button_does_not_set_wants_keyboard
+        PASS [   0.035s] ( 143/1017) amm-client::integration bridge::layer_context::adjust_input_runs_before_the_pass
+        PASS [   0.046s] ( 144/1017) amm-client::integration bridge::layer_context::ctrl_c_in_a_focused_text_field_copies_its_selection
+        PASS [   0.037s] ( 145/1017) amm-client::integration bridge::layer_context::ctrl_v_pastes_into_the_focused_field_on_a_later_pass
+        PASS [   0.022s] ( 146/1017) amm-client::integration bridge::layer_context::default_adjust_input_changes_nothing
+        PASS [   0.271s] ( 147/1017) amm-bench::integration fixtures::stream_rig::each_4k_frame_is_copied_reported_and_taken_so_the_ring_never_fills
+        PASS [   0.026s] ( 148/1017) amm-client::integration bridge::layer_context::layer_keeps_its_localizer_after_rebuild
+        PASS [   0.265s] ( 149/1017) amm-bench::zero_alloc four_clients_of_ten_thousand_vertices_allocate_nothing_in_a_steady_frame
+        PASS [   0.020s] ( 150/1017) amm-client::integration bridge::layer_context::set_localizer_reaches_a_layer_that_already_ran
+        PASS [   0.246s] ( 151/1017) amm-bench::zero_alloc two_clients_with_hud_and_overlay_layers_allocate_nothing_in_a_steady_frame
+        PASS [   0.030s] ( 152/1017) amm-client::integration bridge::layer_context::wants_keyboard_clears_when_the_field_loses_focus
+        PASS [   0.032s] ( 153/1017) amm-client::integration bridge::layer_context::wants_keyboard_is_set_while_a_text_field_has_focus
+        PASS [   0.024s] ( 154/1017) amm-client::integration link::api_table::a_client_accepts_a_newer_minor_table_and_links_through_it
+        PASS [   0.023s] ( 155/1017) amm-client::integration link::api_table::a_client_accepts_a_table_that_declares_exactly_the_functions_of_2_0
+        PASS [   0.032s] ( 156/1017) amm-client::integration bridge::layer_context::wants_keyboard_stays_set_while_the_focused_field_is_scrolled_out_of_view
+        PASS [   0.024s] ( 157/1017) amm-client::integration link::api_table::a_client_refuses_another_major
+        PASS [   0.026s] ( 158/1017) amm-client::integration link::api_table::a_table_that_ends_before_the_last_function_of_2_0_is_abi_mismatch
+        PASS [   0.023s] ( 159/1017) amm-client::integration link::api_table::null_table_is_manager_missing
+        PASS [   0.025s] ( 160/1017) amm-client::integration link::api_table::table_smaller_than_this_client_needs_is_abi_mismatch
+        PASS [   0.028s] ( 161/1017) amm-client::integration link::api_table::wrong_abi_major_is_abi_mismatch
+        PASS [   0.029s] ( 162/1017) amm-client::integration link::capture_stream::a_failed_frame_is_an_error_that_names_its_tag_and_fault
+        PASS [   0.032s] ( 163/1017) amm-client::integration link::capture_stream::a_resized_frame_is_its_own_fault
+        PASS [   0.032s] ( 164/1017) amm-client::integration link::capture_stream::close_and_drop_each_close_the_stream_once
+        PASS [   0.033s] ( 165/1017) amm-client::integration link::capture_stream::free_slots_reads_the_managers_count
+        PASS [   0.033s] ( 166/1017) amm-client::integration link::capture_stream::give_back_sends_the_id
+        PASS [   0.032s] ( 167/1017) amm-client::integration link::capture_stream::lend_on_a_manager_without_the_slot_is_unsupported
+        PASS [   0.032s] ( 168/1017) amm-client::integration link::capture_stream::lend_reads_pixels_without_copy
+        PASS [   0.032s] ( 169/1017) amm-client::integration link::capture_stream::lend_with_nothing_ready_is_none_and_a_failed_frame_is_its_error
+        PASS [   0.034s] ( 170/1017) amm-client::integration link::capture_stream::missed_frame_is_stream_frame_failed
+        PASS [   0.034s] ( 171/1017) amm-client::integration link::capture_stream::request_at_sends_the_present_number
+        PASS [   0.035s] ( 172/1017) amm-client::integration link::capture_stream::request_sends_the_tag_and_maps_a_full_ring_to_busy
+        PASS [   0.035s] ( 173/1017) amm-client::integration link::capture_stream::the_stream_on_an_old_manager_is_unsupported_with_no_free_slot
+        PASS [   0.035s] ( 174/1017) amm-client::integration link::capture_stream::try_take_copies_each_frame_in_the_order_the_manager_gives_them
+        PASS [   0.035s] ( 175/1017) amm-client::integration link::capture_stream::try_take_into_reuses_the_callers_buffer
+        PASS [   0.035s] ( 176/1017) amm-client::integration link::capture_stream::try_take_with_nothing_ready_is_none
+        PASS [   0.035s] ( 177/1017) amm-client::integration link::forward_sink::a_detached_forward_sink_sends_nothing
+        PASS [   0.055s] ( 178/1017) amm-client::integration link::forward_sink::forward_sink_passes_level_message_and_fields_json_to_the_table
+        PASS [   0.053s] ( 179/1017) amm-client::integration link::manager_link::a_link_made_with_a_frame_handler_frees_its_frame_state_on_drop
+        PASS [   0.053s] ( 180/1017) amm-client::integration link::manager_link::a_link_without_a_frame_and_a_refused_unregister_logs_one_error
+        PASS [   0.053s] ( 181/1017) amm-client::integration link::manager_link::a_link_without_a_frame_forwards_its_logs_until_it_drops
+        PASS [   0.052s] ( 182/1017) amm-client::integration link::manager_link::a_link_without_a_frame_gets_keybind_and_settings_events
+        PASS [   0.051s] ( 183/1017) amm-client::integration link::manager_link::a_link_without_a_frame_registers_with_no_callbacks_and_unregisters_on_drop
+        PASS [   0.050s] ( 184/1017) amm-client::integration link::manager_link::a_refused_register_without_a_frame_is_the_status
+        PASS [   0.032s] ( 185/1017) amm-client::integration link::manager_link::a_refused_unregister_keeps_the_frame_state_and_logs_an_error
+        PASS [   0.032s] ( 186/1017) amm-client::integration link::manager_link::an_unregister_that_returns_ok_frees_the_frame_state
+        PASS [   0.032s] ( 187/1017) amm-client::integration link::manager_link::config_parses_the_hcl_document_into_the_mods_type
+        PASS [   0.033s] ( 188/1017) amm-client::integration link::manager_link::config_that_does_not_fit_the_mods_type_is_an_error
+        PASS [   0.033s] ( 189/1017) amm-client::integration link::manager_link::dropping_the_link_unregisters_once
+        PASS [   0.038s] ( 190/1017) amm-client::integration link::manager_link::empty_icon_file_is_refused_without_a_call
+        PASS [   0.035s] ( 191/1017) amm-client::integration link::manager_link::events_come_back_as_core_events_in_order
+        PASS [   0.033s] ( 192/1017) amm-client::integration link::manager_link::game_picture_gives_the_size_the_manager_reports
+        PASS [   0.034s] ( 193/1017) amm-client::integration link::manager_link::game_picture_maps_a_refusal
+        PASS [   0.035s] ( 194/1017) amm-client::integration link::manager_link::game_picture_on_an_old_manager_is_unsupported
+        PASS [   0.034s] ( 195/1017) amm-client::integration link::manager_link::holder_copies_the_id_and_none_when_no_mod_holds_it
+        PASS [   0.035s] ( 196/1017) amm-client::integration link::manager_link::holder_reads_an_id_longer_than_its_first_buffer
+        PASS [   0.031s] ( 197/1017) amm-client::integration link::manager_link::link_reads_the_locale
+        PASS [   0.032s] ( 198/1017) amm-client::integration link::manager_link::logging_after_the_link_is_dropped_does_not_reach_the_table
+        PASS [   0.035s] ( 199/1017) amm-client::integration link::manager_link::missing_file_is_icon_file_error
+        PASS [   0.036s] ( 200/1017) amm-client::integration link::manager_link::old_manager_gives_unsupported
+        PASS [   0.037s] ( 201/1017) amm-client::integration link::manager_link::oversized_file_is_refused_without_a_call
+        PASS [   0.035s] ( 202/1017) amm-client::integration link::manager_link::present_count_reads_the_table
+        PASS [   0.034s] ( 203/1017) amm-client::integration link::manager_link::register_gives_the_descriptor_text_and_a_refusal_is_the_status
+        PASS [   0.034s] ( 204/1017) amm-client::integration link::manager_link::render_size_on_an_old_manager_is_unsupported
+        PASS [   0.035s] ( 205/1017) amm-client::integration link::manager_link::render_size_reads_a_zero_wanted_size_as_none
+        PASS [   0.032s] ( 206/1017) amm-client::integration link::manager_link::render_size_reads_the_wanted_and_the_actual_size
+        PASS [   0.032s] ( 207/1017) amm-client::integration link::manager_link::set_game_viewport_on_an_old_manager_is_unsupported
+        PASS [   0.030s] ( 208/1017) amm-client::integration link::manager_link::set_game_viewport_sends_the_rect_and_none_clears
+        PASS [   0.034s] ( 209/1017) amm-client::integration link::manager_link::set_icon_file_reads_and_sends
+        PASS [   0.032s] ( 210/1017) amm-client::integration link::manager_link::set_icon_maps_status
+        PASS [   0.032s] ( 211/1017) amm-client::integration link::manager_link::set_icon_passes_the_bytes
+        PASS [   0.033s] ( 212/1017) amm-client::integration link::manager_link::set_render_size_maps_a_refusal
+        PASS [   0.033s] ( 213/1017) amm-client::integration link::manager_link::set_render_size_sends_the_size_and_none_clears
+        PASS [   0.033s] ( 214/1017) amm-client::integration link::manager_link::the_link_gives_back_the_localizer_it_was_set
+        PASS [   0.032s] ( 215/1017) amm-client::integration link::manager_link::the_link_sink_logs_through_the_links_handle_until_the_link_drops
+        PASS [   0.031s] ( 216/1017) amm-client::integration link::manager_link::tracing_events_reach_the_table_through_the_bridge
+        PASS [   0.033s] ( 217/1017) amm-client::integration link::sized_abi::read_fills_missing_fields_with_blank
+        PASS [   0.033s] ( 218/1017) amm-client::integration link::sized_abi::read_never_reads_past_its_own_size
+        PASS [   0.033s] ( 219/1017) amm-client::integration link::sized_abi::read_refuses_null_and_unaligned
+        PASS [   0.033s] ( 220/1017) amm-client::integration link::sized_abi::read_refuses_size_below_base
+        PASS [   0.033s] ( 221/1017) amm-client::integration link::sized_abi::write_refuses_null
+        PASS [   0.033s] ( 222/1017) amm-client::integration link::sized_abi::write_refuses_size_below_base_and_writes_nothing
+        PASS [   0.033s] ( 223/1017) amm-client::integration link::sized_abi::write_writes_only_the_declared_size
+        PASS [   0.034s] ( 224/1017) amm-client::integration test_support::fake_table::a_keybind_queued_in_each_phase_reaches_the_link_in_order
+        PASS [   0.035s] ( 225/1017) amm-client::integration test_support::fake_table::a_menu_entry_click_reaches_the_link
+        PASS [   0.034s] ( 226/1017) amm-client::integration test_support::fake_table::acquire_answers_the_outcome_set_for_each_capability_and_grants_the_rest
+        PASS [   0.034s] ( 227/1017) amm-client::integration test_support::fake_table::both_screenshot_events_reach_the_link_in_order
+        PASS [   0.034s] ( 228/1017) amm-client::integration test_support::fake_table::client_reports_missing_slot_as_none
+        PASS [   0.033s] ( 229/1017) amm-client::integration test_support::fake_table::held_by_other_answers_what_is_set_per_capability_and_false_for_the_rest
+        PASS [   0.034s] ( 230/1017) amm-client::integration test_support::fake_table::lease_events_for_world_draw_reach_the_link_in_order
+        PASS [   0.034s] ( 231/1017) amm-client::integration test_support::fake_table::register_menu_entry_passes_label_mark_and_screens_and_returns_the_id
+        PASS [   0.033s] ( 232/1017) amm-client::integration test_support::fake_table::release_and_set_setting_are_recorded_with_their_arguments
+        PASS [   0.033s] ( 233/1017) amm-client::integration test_support::fake_table::request_screenshot_records_the_path_and_answers_the_sequence_or_status_set
+        PASS [   0.034s] ( 234/1017) amm-client::integration test_support::fake_table::request_screenshot_with_passes_the_layer_choice
+        PASS [   0.033s] ( 235/1017) amm-client::integration test_support::fake_table::texture_budget_answers_the_grant_set
+        PASS [   0.031s] ( 236/1017) amm-core::integration config::budgets::the_texture_maxima_are_clamped_to_their_hard_maximum
+        PASS [   0.038s] ( 237/1017) amm-core::integration config::budgets::defaults_are_inside_every_bound
+        PASS [   0.029s] ( 238/1017) amm-core::integration config::budgets::the_texture_maxima_default_to_1024_mib_and_4096_textures
+        PASS [   0.030s] ( 239/1017) amm-core::integration config::budgets::values_past_a_maximum_are_clamped_and_named
+        PASS [   0.029s] ( 240/1017) amm-core::integration config::budgets::values_under_a_minimum_are_raised
+        PASS [   0.030s] ( 241/1017) amm-core::integration config::manager_config::config_reads_chord_text_and_resolutions_from_hcl
+        PASS [   0.028s] ( 242/1017) amm-core::integration config::manager_config::empty_config_gives_the_defaults
+        PASS [   0.027s] ( 243/1017) amm-core::integration config::manager_config::log_level_for_falls_back_to_global_then_info
+        PASS [   0.029s] ( 244/1017) amm-core::integration config::resolution_book::a_book_is_empty_until_a_resolution_of_either_kind_is_stored
+        PASS [   0.032s] ( 245/1017) amm-core::integration config::resolution_book::resolution_lookup_ignores_pair_order
+        PASS [   0.035s] ( 246/1017) amm-core::integration config::resolution_book::unreviewed_pair_returns_none
+        PASS [   0.036s] ( 247/1017) amm-core::integration config::resolution_book::with_exclusive_leaves_the_original_book_unchanged
+        PASS [   0.055s] ( 248/1017) amm-core::integration services::abi::abi_prefix::abi_prefix_clamps_a_longer_struct
+        PASS [   0.075s] ( 249/1017) amm-core::integration services::abi::abi_prefix::abi_prefix_reads_an_equal_struct
+        PASS [   0.092s] ( 250/1017) amm-core::integration services::abi::abi_prefix::abi_prefix_reads_a_shorter_struct
+        PASS [   0.091s] ( 251/1017) amm-core::integration services::capture::capture_book::a_capture_needs_an_active_hud_or_overlay_lease
+        PASS [   0.087s] ( 252/1017) amm-core::integration services::capture::capture_book::a_capture_taken_before_its_mod_loses_the_lease_is_still_written
+        PASS [   0.105s] ( 253/1017) amm-core::integration services::abi::abi_prefix::abi_prefix_refuses_a_size_below_base
+        PASS [   0.094s] ( 254/1017) amm-core::integration services::capture::capture_book::a_capture_of_an_unregistered_mod_sends_no_event_to_the_next_mod_in_its_slot
+        PASS [   0.041s] ( 255/1017) amm-core::integration services::capture::capture_book::a_pending_capture_the_host_never_takes_fails_after_its_tick_limit
+        PASS [   0.076s] ( 256/1017) amm-core::integration services::capture::capture_book::a_path_that_is_relative_not_png_or_has_dot_dot_is_refused
+        PASS [   0.032s] ( 257/1017) amm-core::integration services::capture::capture_book::captures_with_and_without_layers_share_the_slot_count_and_the_one_per_mod_rule
+        PASS [   0.041s] ( 258/1017) amm-core::integration services::capture::capture_book::a_taken_capture_is_not_taken_again_and_a_failed_copy_ends_it
+        PASS [   0.046s] ( 259/1017) amm-core::integration services::capture::capture_book::ticks_do_not_end_a_capture_the_host_has_taken
+        PASS [   0.075s] ( 260/1017) amm-core::integration services::capture::capture_book::a_second_capture_of_one_mod_is_busy_until_written
+        PASS [   0.071s] ( 261/1017) amm-core::integration services::capture::capture_book::taken_and_written_events_reach_the_mod_in_order_and_survive_a_full_queue
+        PASS [   0.039s] ( 262/1017) amm-core::integration services::capture::capture_stream_book::a_close_of_another_mod_leaves_the_stream_in_use
+        PASS [   0.077s] ( 263/1017) amm-core::integration services::capture::capture_book::the_fifth_capture_in_flight_is_busy
+        PASS [   0.038s] ( 264/1017) amm-core::integration services::capture::capture_stream_book::a_device_loss_with_no_size_change_stays_device_lost
+        PASS [   0.077s] ( 265/1017) amm-core::integration services::capture::capture_book::unregister_or_lease_loss_cancels_a_pending_capture
+        PASS [   0.050s] ( 266/1017) amm-core::integration services::capture::capture_stream_book::a_frame_keeps_the_number_of_the_present_that_offered_it
+        PASS [   0.032s] ( 267/1017) amm-core::integration services::capture::capture_stream_book::a_request_is_offered_once_by_the_next_present
+        PASS [   0.017s] ( 268/1017) amm-core::integration services::capture::capture_stream_book::close_frees_every_buffer_tells_the_overlay_once_and_a_new_stream_starts
+        PASS [   0.037s] ( 269/1017) amm-core::integration services::capture::capture_stream_book::a_pending_frame_of_a_mod_that_lost_its_lease_fails_not_permitted
+        PASS [   0.076s] ( 270/1017) amm-core::integration services::capture::capture_stream_book::a_buffer_asked_for_and_not_reported_by_the_next_present_fails_the_frame
+        PASS [   0.050s] ( 271/1017) amm-core::integration services::capture::capture_stream_book::a_size_change_fails_the_copies_in_flight_as_resized_in_order
+        PASS [   0.027s] ( 272/1017) amm-core::integration services::capture::capture_stream_book::close_while_a_copy_is_in_flight_drops_it_and_frees_its_buffer
+        PASS [   0.052s] ( 273/1017) amm-core::integration services::capture::capture_stream_book::a_taken_frame_reuses_its_buffer_for_the_next_frame_of_the_same_size
+        PASS [   0.035s] ( 274/1017) amm-core::integration services::capture::capture_stream_book::given_back_buffer_is_reused_without_allocating
+        PASS [   0.046s] ( 275/1017) amm-core::integration services::capture::capture_stream_book::frames_come_back_in_request_order_when_a_later_copy_is_read_first
+        PASS [   0.041s] ( 276/1017) amm-core::integration services::capture::capture_stream_book::give_back_after_close_frees_the_buffer
+        PASS [   0.023s] ( 277/1017) amm-core::integration services::capture::capture_stream_book::lend_past_max_is_busy
+        PASS [   0.052s] ( 278/1017) amm-core::integration services::capture::capture_stream_book::give_back_of_an_unknown_id_is_refused
+        PASS [   0.039s] ( 279/1017) amm-core::integration services::capture::capture_stream_book::lent_buffer_is_not_reused_until_given_back
+        PASS [   0.031s] ( 280/1017) amm-core::integration services::capture::capture_stream_book::named_request_past_its_present_fails_missed
+        PASS [   0.046s] ( 281/1017) amm-core::integration services::capture::capture_stream_book::request_without_number_takes_the_next_present
+        PASS [   0.036s] ( 282/1017) amm-core::integration services::capture::capture_stream_book::unregister_frees_lent_buffers
+        PASS [   0.059s] ( 283/1017) amm-core::integration services::capture::capture_stream_book::the_ring_is_bounded_and_a_full_ring_is_busy
+        PASS [   0.038s] ( 284/1017) amm-core::integration services::clash::clash_analyzer::a_stored_resolution_marks_the_exclusive_clash_reviewed_and_clears_the_badge
+        PASS [   0.069s] ( 285/1017) amm-core::integration services::capture::capture_stream_book::named_request_waits_for_its_present
+        PASS [   0.062s] ( 286/1017) amm-core::integration services::capture::capture_stream_book::named_requests_keep_request_order
+        PASS [   0.050s] ( 287/1017) amm-core::integration services::clash::clash_analyzer::a_second_analysis_replaces_the_first_report
+        PASS [   0.039s] ( 288/1017) amm-core::integration services::clash::clash_analyzer::exclusive_and_shared_on_camera_is_an_interaction_without_a_badge
+        PASS [   0.030s] ( 289/1017) amm-core::integration services::clash::clash_analyzer::global_and_while_held_on_shared_input_clash
+        PASS [   0.046s] ( 290/1017) amm-core::integration services::clash::clash_analyzer::disabled_mods_are_left_out
+        PASS [   0.041s] ( 291/1017) amm-core::integration services::clash::clash_analyzer::key_clash_is_never_reviewed
+        PASS [   0.051s] ( 292/1017) amm-core::integration services::clash::clash_analyzer::global_and_while_held_on_exclusive_input_do_not_clash
+        PASS [   0.026s] ( 293/1017) amm-core::integration services::clash::clash_analyzer::two_global_binds_with_one_chord_in_two_mods_clash
+        PASS [   0.049s] ( 294/1017) amm-core::integration services::clash::clash_analyzer::same_mod_binds_with_one_chord_are_reported
+        PASS [   0.021s] ( 295/1017) amm-core::integration services::clash::clash_analyzer::two_shared_claims_on_one_capability_do_not_clash
+        PASS [   0.068s] ( 296/1017) amm-core::integration services::clash::clash_analyzer::key_clashes_stop_at_the_cap_when_every_bind_shares_one_chord
+        PASS [   0.065s] ( 297/1017) amm-core::integration services::clash::clash_analyzer::two_exclusive_claims_on_camera_are_a_conflict_with_a_badge_on_both
+        PASS [   0.040s] ( 298/1017) amm-core::integration services::clash::clash_analyzer::while_held_binds_on_compatible_capabilities_clash
+        PASS [   0.074s] ( 299/1017) amm-core::integration services::clash::clash_analyzer::the_four_spec_mods_give_one_interaction_and_no_conflict
+        PASS [   0.066s] ( 300/1017) amm-core::integration services::clash::clash_analyzer::while_held_binds_on_clashing_capabilities_do_not_clash
+        PASS [   0.072s] ( 301/1017) amm-core::integration services::descriptor::descriptor_checker::a_keybind_on_bare_f3_is_refused
+        PASS [   0.084s] ( 302/1017) amm-core::integration services::descriptor::descriptor_checker::a_block_player_turn_flag_on_a_non_input_claim_is_refused
+        PASS [   0.078s] ( 303/1017) amm-core::integration services::descriptor::descriptor_checker::a_claim_without_pass_pointer_motion_parses_as_false
+        PASS [   0.053s] ( 304/1017) amm-core::integration services::descriptor::descriptor_checker::accepts_every_field_kind_and_color_encoding
+        PASS [   0.025s] ( 305/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_a_config_path_that_leaves_the_mod_folder
+        PASS [   0.071s] ( 306/1017) amm-core::integration services::descriptor::descriptor_checker::a_shared_render_size_claim_is_refused
+        PASS [   0.050s] ( 307/1017) amm-core::integration services::descriptor::descriptor_checker::pass_pointer_motion_on_another_claim_is_refused
+        PASS [   0.086s] ( 308/1017) amm-core::integration services::descriptor::descriptor_checker::a_zero_or_non_number_budget_is_refused_with_a_reason
+        PASS [   0.064s] ( 309/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_129_keybinds_and_257_fields
+        PASS [   0.039s] ( 310/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_an_id_with_path_characters
+        PASS [   0.055s] ( 311/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_a_path_that_is_not_dotted_identifiers
+        PASS [   0.046s] ( 312/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_float_default_that_is_a_string
+        PASS [   0.029s] ( 313/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_hide_vanilla_hud_on_a_camera_claim
+        PASS [   0.071s] ( 314/1017) amm-core::integration services::descriptor::descriptor_checker::pass_pointer_motion_parses_on_an_input_claim
+        PASS [   0.064s] ( 315/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_duplicate_setting_paths
+        PASS [   0.040s] ( 316/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_int_default_outside_its_range
+        PASS [   0.077s] ( 317/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_inverted_ranges_zero_steps_and_empty_enums
+        PASS [   0.070s] ( 318/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_claim_blocks_with_one_label_in_text
+        PASS [   0.070s] ( 319/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_claims_on_one_capability
+        PASS [   0.091s] ( 320/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_keybind_whose_config_path_is_not_a_chord_field
+        PASS [   0.076s] ( 321/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_keybind_blocks_with_one_label_in_text
+        PASS [   0.040s] ( 322/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_windows_device_names_and_the_manager_id
+        PASS [   0.041s] ( 323/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_section_blocks_with_one_id_in_text
+        PASS [   0.077s] ( 324/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_keybinds_with_one_action_id
+        PASS [   0.111s] ( 325/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_two_field_blocks_with_one_path_in_text
+        PASS [   0.023s] ( 326/1017) amm-core::integration services::descriptor::descriptor_checker::unknown_capability_label_reports_one_parse_message
+        PASS [   0.063s] ( 327/1017) amm-core::integration services::descriptor::descriptor_checker::rejects_unparseable_hcl_with_the_parse_reason
+        PASS [   0.049s] ( 328/1017) amm-core::integration services::descriptor::descriptor_checker::the_spec_example_descriptor_parses_and_passes
+        PASS [   0.035s] ( 329/1017) amm-core::integration services::egui_bridge::mesh_flattener::empty_clip_rects_are_skipped
+        PASS [   0.062s] ( 330/1017) amm-core::integration services::egui_bridge::mesh_flattener::managed_texture_draws_and_uploads_with_its_own_magnification_filter
+        PASS [   0.055s] ( 331/1017) amm-core::integration services::egui_bridge::mesh_flattener::overlay_layer_marks_managed_ids_and_keeps_user_ids
+        PASS [   0.052s] ( 332/1017) amm-core::integration services::egui_bridge::mesh_flattener::texture_delta_bytes_are_packed_rgba8_with_offsets
+        PASS [   0.075s] ( 333/1017) amm-core::integration services::egui_bridge::key_map::safe_key_map_does_not_map_space_or_enter
+        PASS [   0.088s] ( 334/1017) amm-core::integration services::egui_bridge::mesh_flattener::flattened_vertices_are_in_physical_pixels
+        PASS [   0.022s] ( 335/1017) amm-core::integration services::egui_bridge::raw_input_builder::disallowed_pointer_events_are_dropped
+        PASS [   0.074s] ( 336/1017) amm-core::integration services::egui_bridge::mesh_flattener::second_mesh_indices_are_rebased_and_offsets_chain
+        PASS [   0.073s] ( 337/1017) amm-core::integration services::egui_bridge::mesh_flattener::the_game_picture_texture_is_drawn_with_its_reserved_host_id_its_own_shader_and_the_linear_sampler
+        PASS [   0.047s] ( 338/1017) amm-core::integration services::egui_bridge::raw_input_builder::ctrl_v_without_the_keyboard_records_none
+        PASS [   0.059s] ( 339/1017) amm-core::integration services::egui_bridge::mesh_flattener::user_texture_keeps_sampler_bits
+        PASS [   0.080s] ( 340/1017) amm-core::integration services::egui_bridge::raw_input_builder::ctrl_v_down_with_the_keyboard_allowed_records_a_paste_request
+        PASS [   0.054s] ( 341/1017) amm-core::integration services::egui_bridge::raw_input_builder::focus_loss_releases_held_buttons
+        PASS [   0.034s] ( 342/1017) amm-core::integration services::event::event_queue::a_full_queue_never_drops_a_key_up_or_a_button_up
+        PASS [   0.048s] ( 343/1017) amm-core::integration services::event::event_queue::a_full_queue_drops_an_old_key_down_before_a_new_key_down_is_lost
+        PASS [   0.059s] ( 344/1017) amm-core::integration services::egui_bridge::raw_input_builder::pointer_events_are_converted_to_points
+        PASS [   0.059s] ( 345/1017) amm-core::integration services::egui_bridge::raw_input_builder::space_is_dropped_without_nav_keys_and_delivered_with_them
+        PASS [   0.042s] ( 346/1017) amm-core::integration services::event::event_queue::a_full_queue_drops_pressed_and_repeat_keybinds_before_released
+        PASS [   0.026s] ( 347/1017) amm-core::integration services::event::event_queue::event_queue_past_capacity_merges_deltas_then_drops_oldest_keybind
+        PASS [   0.028s] ( 348/1017) amm-core::integration services::event::event_queue::full_queue_drops_keybind_then_wheel_then_key_repeat_before_the_new_event
+        PASS [   0.042s] ( 349/1017) amm-core::integration services::event::event_queue::event_queue_never_drops_a_key_up
+        PASS [   0.053s] ( 350/1017) amm-core::integration services::event::event_queue::locale_event_survives_a_full_queue
+        PASS [   0.065s] ( 351/1017) amm-core::integration services::icon::icon_book::clear_frees_the_slot
+        PASS [   0.060s] ( 352/1017) amm-core::integration services::icon::icon_book::resident_bytes_counts_pixels
+        PASS [   0.073s] ( 353/1017) amm-core::integration services::icon::icon_book::bound_holds_past_capacity
+        PASS [   0.072s] ( 354/1017) amm-core::integration services::event::event_queue::keybind_releases_and_button_ups_are_kept_when_the_queue_is_full
+        PASS [   0.050s] ( 355/1017) amm-core::integration services::icon::icon_book::set_replaces_and_raises_generation
+        PASS [   0.051s] ( 356/1017) amm-core::integration services::icon::icon_book::reused_slot_gets_a_new_generation
+        PASS [   0.025s] ( 357/1017) amm-core::integration services::icon::icon_decoder::apng_decodes_its_default_image
+        PASS [   0.050s] ( 358/1017) amm-core::integration services::icon::icon_decoder::header_claiming_more_than_256_px_is_refused
+        PASS [   0.051s] ( 359/1017) amm-core::integration services::icon::icon_decoder::bad_signature_is_not_png
+        PASS [   0.071s] ( 360/1017) amm-core::integration services::icon::icon_decoder::a_256_square_decodes
+        PASS [   0.060s] ( 361/1017) amm-core::integration services::icon::icon_decoder::exactly_max_bytes_is_not_refused_for_size
+        PASS [   0.063s] ( 362/1017) amm-core::integration services::icon::icon_decoder::low_bit_depth_grey_and_palette_become_rgba8
+        PASS [   0.065s] ( 363/1017) amm-core::integration services::icon::icon_decoder::input_over_the_byte_cap_is_refused_before_decoding
+        PASS [   0.030s] ( 364/1017) amm-core::integration services::icon::icon_decoder::rgba_png_decodes_to_its_size_and_pixels
+        PASS [   0.060s] ( 365/1017) amm-core::integration services::icon::icon_decoder::rgb_grey_palette_and_16_bit_inputs_become_rgba8
+        PASS [   0.033s] ( 366/1017) amm-core::integration services::icon::icon_decoder::truncated_or_corrupt_data_is_corrupt
+        PASS [   0.041s] ( 367/1017) amm-core::integration services::input::corner_row::bounds_cover_every_slot
+        PASS [   0.061s] ( 368/1017) amm-core::integration services::icon::icon_decoder::short_tail_or_missing_ihdr_is_not_png
+        PASS [   0.035s] ( 369/1017) amm-core::integration services::input::corner_row::entries_run_right_to_left_in_registration_order
+        PASS [   0.060s] ( 370/1017) amm-core::integration services::input::chord_matcher::chord_matcher_drops_entries_past_its_bound_and_counts_them
+        PASS [   0.035s] ( 371/1017) amm-core::integration services::input::corner_row::mods_alone_is_one_square_slot
+        PASS [   0.050s] ( 372/1017) amm-core::integration services::input::chord_matcher::chord_matcher_finds_ctrl_shift_m_and_not_ctrl_m
+        PASS [   0.046s] ( 373/1017) amm-core::integration services::input::corner_row::corner_row_puts_mods_rightmost_and_entries_to_its_left
+        PASS [   0.035s] ( 374/1017) amm-core::integration services::input::cursor_set::removing_the_last_requester_ends_cursor_mode
+        PASS [   0.053s] ( 375/1017) amm-core::integration services::input::cursor_set::cursor_is_free_while_any_mod_asks_or_the_panel_is_open
+        PASS [   0.033s] ( 376/1017) amm-core::integration services::input::game_viewport_book::a_cleared_viewport_is_gone
+        PASS [   0.060s] ( 377/1017) amm-core::integration services::input::fake_keys::hold_then_release_queues_down_then_up
+        PASS [   0.077s] ( 378/1017) amm-core::integration services::input::fake_keys::release_all_reports_every_mod
+        PASS [   0.076s] ( 379/1017) amm-core::integration services::input::fake_keys::holding_a_held_key_or_releasing_a_free_one_queues_nothing
+        PASS [   0.089s] ( 380/1017) amm-core::integration services::input::fake_keys::a_key_two_mods_hold_goes_up_with_the_last_release
+        PASS [   1.797s] ( 381/1017) amm-bench::zero_alloc panel_frames_with_steady_icons_allocate_a_constant_amount_per_frame
+        PASS [   0.100s] ( 382/1017) amm-core::integration services::input::fake_keys::release_mod_keeps_the_keys_of_other_mods
+        PASS [   0.054s] ( 383/1017) amm-core::integration services::input::game_viewport_book::the_book_holds_one_viewport_per_slot_and_ignores_a_slot_past_the_capacity
+        PASS [   0.046s] ( 384/1017) amm-core::integration services::input::input_router::a_chord_bound_by_the_text_owner_goes_to_its_field
+        PASS [   0.072s] ( 385/1017) amm-core::integration services::input::game_viewport_book::the_viewport_of_the_overlay_holder_is_found_under_the_pointer
+        PASS [   0.089s] ( 386/1017) amm-core::integration services::input::game_viewport_book::a_mod_that_does_not_hold_overlay_has_no_viewport
+        PASS [   0.045s] ( 387/1017) amm-core::integration services::input::input_router::a_click_in_the_game_viewport_reaches_the_game_and_the_layer_owner
+        PASS [   0.093s] ( 388/1017) amm-core::integration services::input::input_router::a_blocked_keybind_shows_no_toast_while_a_field_has_focus
+        PASS [   0.064s] ( 389/1017) amm-core::integration services::input::input_router::a_key_without_an_f3_bind_is_swallowed_while_f3_is_held
+        PASS [   0.079s] ( 390/1017) amm-core::integration services::input::input_router::a_key_pressed_in_a_field_is_released_to_the_field_after_focus_goes
+        PASS [   0.066s] ( 391/1017) amm-core::integration services::input::input_router::a_keybind_pressed_before_the_field_got_focus_is_released_to_its_keybind
+        PASS [   0.075s] ( 392/1017) amm-core::integration services::input::input_router::a_keybind_of_another_mod_does_not_run_while_a_field_has_focus
+        PASS [   0.076s] ( 393/1017) amm-core::integration services::input::input_router::an_exclusive_input_holder_gets_f3_and_keys_held_with_it_raw
+        PASS [   0.078s] ( 394/1017) amm-core::integration services::input::input_router::a_letter_bound_by_the_text_owner_goes_to_its_field
+        PASS [   0.041s] ( 395/1017) amm-core::integration services::input::input_router::blocked_input_holder_gets_no_raw_events
+        PASS [   0.077s] ( 396/1017) amm-core::integration services::input::input_router::bind_blocked_by_exclusive_camera_is_consumed_and_names_the_holder
+        PASS [   0.046s] ( 397/1017) amm-core::integration services::input::input_router::dejavu_exclusive_input_alone_decides_motion
+        PASS [   0.041s] ( 398/1017) amm-core::integration services::input::input_router::focus_lost_forgets_a_held_f3
+        PASS [   0.062s] ( 399/1017) amm-core::integration services::input::input_router::f3_repeats_are_swallowed_and_g_still_binds
+        PASS [   0.062s] ( 400/1017) amm-core::integration services::input::input_router::f3_released_first_still_releases_the_bind
+        PASS [   0.067s] ( 401/1017) amm-core::integration services::input::input_router::f3_alone_reaches_nothing
+        PASS [   0.063s] ( 402/1017) amm-core::integration services::input::input_router::global_toggle_bind_reaches_its_mod_while_freecam_holds_shared_input
+        PASS [   0.060s] ( 403/1017) amm-core::integration services::input::input_router::keybinds_run_again_when_no_field_has_focus
+        PASS [   0.075s] ( 404/1017) amm-core::integration services::input::input_router::f3_then_keys_fire_each_f3_bind
+        PASS [   0.033s] ( 405/1017) amm-core::integration services::input::input_router::motion_passthrough_does_not_depend_on_block_player_turn
+        PASS [   0.075s] ( 406/1017) amm-core::integration services::input::input_router::key_up_reaches_the_mod_that_got_the_key_down_after_it_is_suspended
+        PASS [   0.023s] ( 407/1017) amm-core::integration services::input::input_router::motion_reaches_the_game_when_every_holder_passes_it
+        PASS [   0.046s] ( 408/1017) amm-core::integration services::input::input_router::keys_pressed_while_the_panel_is_open_never_reach_the_holder
+        PASS [   0.050s] ( 409/1017) amm-core::integration services::input::input_router::motion_is_consumed_when_any_holder_does_not_pass_it
+        PASS [   0.058s] ( 410/1017) amm-core::integration services::input::input_router::motion_is_consumed_for_an_input_holder_by_default
+        PASS [   0.043s] ( 411/1017) amm-core::integration services::input::input_router::passthrough_key_reaches_the_game_only_if_every_holder_lists_it
+        PASS [   0.041s] ( 412/1017) amm-core::integration services::input::input_router::text_owner_gets_f3_and_the_next_key_raw
+        PASS [   0.062s] ( 413/1017) amm-core::integration services::input::input_router::panel_open_takes_every_event_and_consumes_it
+        PASS [   0.038s] ( 414/1017) amm-core::integration services::input::input_router::the_panel_still_takes_motion
+        PASS [   0.062s] ( 415/1017) amm-core::integration services::input::input_router::raw_key_goes_to_every_input_holder_and_is_consumed
+        PASS [   0.074s] ( 416/1017) amm-core::integration services::input::input_router::plain_g_still_binds_after_f3_is_released
+        PASS [   0.062s] ( 417/1017) amm-core::integration services::input::input_router::the_manager_toggle_chord_still_opens_the_panel_while_a_field_has_focus
+        PASS [   0.066s] ( 418/1017) amm-core::integration services::input::input_router::the_open_panel_still_gets_the_key_while_a_field_has_focus
+        PASS [   0.050s] ( 419/1017) amm-core::integration services::input::input_router::the_text_owner_gets_the_key_before_an_input_holder
+        PASS [   0.039s] ( 420/1017) amm-core::integration services::input::input_router::toggle_chord_toggles_the_panel_even_when_a_mod_holds_input
+        PASS [   0.030s] ( 421/1017) amm-core::integration services::input::input_router::wheel_and_buttons_stay_consumed_with_motion_passthrough
+        PASS [   0.027s] ( 422/1017) amm-core::integration services::input::key_state::focus_lost_clears_every_key
+        PASS [   0.047s] ( 423/1017) amm-core::integration services::input::input_router::toggle_chord_with_f3_held_does_not_toggle
+        PASS [   0.027s] ( 424/1017) amm-core::integration services::input::key_watch::an_empty_slice_clears_the_set
+        PASS [   0.035s] ( 425/1017) amm-core::integration services::input::key_state::key_state_follows_downs_and_ups_of_keys_and_buttons
+        PASS [   0.028s] ( 426/1017) amm-core::integration services::input::key_watch::forget_clears_mod
+        PASS [   0.028s] ( 427/1017) amm-core::integration services::input::key_watch::watchers_of_unwatched_key_is_empty
+        PASS [   0.058s] ( 428/1017) amm-core::integration services::input::input_router::while_held_bind_is_ignored_until_the_mod_holds_its_capability
+        PASS [   0.031s] ( 429/1017) amm-core::integration services::input::key_watch::set_replaces_previous_set
+        PASS [   0.024s] ( 430/1017) amm-core::integration services::input::menu_button::shown_with_small_overlay
+        PASS [   0.033s] ( 431/1017) amm-core::integration services::input::menu_button::a_click_on_the_old_rect_while_covered_misses_the_button
+        PASS [   0.038s] ( 432/1017) amm-core::integration services::input::menu_button::hidden_while_overlay_covers_screen
+        PASS [   0.035s] ( 433/1017) amm-core::integration services::input::menu_button::rect_is_none_while_covered
+        PASS [   0.025s] ( 434/1017) amm-core::integration services::lease::lease_arbiter::a_holder_that_is_not_suspended_still_gets_granted_on_a_repeat_acquire
+        PASS [   0.030s] ( 435/1017) amm-core::integration services::lease::lease_arbiter::a_second_mod_cannot_take_render_size_while_another_holds_it
+        PASS [   0.033s] ( 436/1017) amm-core::integration services::lease::lease_arbiter::a_prefer_resolution_does_not_take_render_size_from_its_holder
+        PASS [   0.035s] ( 437/1017) amm-core::integration services::lease::lease_arbiter::a_suspended_shared_holder_that_acquires_again_is_denied_by_the_exclusive_holder
+        PASS [   0.031s] ( 438/1017) amm-core::integration services::lease::lease_arbiter::blocked_by_names_the_holder_without_changing_state
+        PASS [   0.040s] ( 439/1017) amm-core::integration services::lease::lease_arbiter::acquire_of_an_unclaimed_capability_is_denied_without_side_effects
+        PASS [   0.044s] ( 440/1017) amm-core::integration services::lease::lease_arbiter::blocked_table_agrees_with_blocked_by_after_every_change
+        PASS [   0.046s] ( 441/1017) amm-core::integration services::lease::lease_arbiter::coexist_resolution_neither_suspends_nor_denies
+        PASS [   0.046s] ( 442/1017) amm-core::integration services::lease::lease_arbiter::exclusive_acquire_suspends_shared_holders_before_granting
+        PASS [   0.052s] ( 443/1017) amm-core::integration services::lease::lease_arbiter::held_by_other_is_true_only_when_another_mod_holds_the_capability
+        PASS [   0.061s] ( 444/1017) amm-core::integration services::lease::lease_arbiter::exclusive_clash_deny_second_keeps_the_first_holder
+        PASS [   0.062s] ( 445/1017) amm-core::integration services::lease::lease_arbiter::exclusive_clash_prefer_revokes_the_holder_before_granting
+        PASS [   0.054s] ( 446/1017) amm-core::integration services::lease::lease_arbiter::most_recent_lists_active_holders_newest_first
+        PASS [   0.093s] ( 447/1017) amm-core::integration services::lease::lease_arbiter::prefer_for_the_holder_denies_the_requester
+        PASS [   0.076s] ( 448/1017) amm-core::integration services::lease::lease_arbiter::release_all_releases_every_capability_and_resumes_others
+        PASS [   0.059s] ( 449/1017) amm-core::integration services::lease::lease_arbiter::releasing_the_exclusive_lease_resumes_suspended_and_notifies_denied_mods
+        PASS [   0.094s] ( 450/1017) amm-core::integration services::lease::lease_arbiter::refresh_blocked_applies_a_new_resolution
+        PASS [   0.066s] ( 451/1017) amm-core::integration services::lease::lease_arbiter::render_size_is_free_for_the_second_mod_once_the_holder_releases_it
+        PASS [   0.096s] ( 452/1017) amm-core::integration services::lease::lease_arbiter::refresh_blocked_drops_a_resolution_that_the_book_no_longer_holds
+        PASS [   0.075s] ( 453/1017) amm-core::integration services::lease::lease_arbiter::second_acquire_by_the_exclusive_holder_changes_nothing
+        PASS [   0.049s] ( 454/1017) amm-core::integration services::manager::icon::unknown_slot_is_unknown_mod
+        PASS [   0.104s] ( 455/1017) amm-core::integration services::lease::lease_arbiter::shared_acquire_while_exclusive_held_is_denied_with_the_holder
+        PASS [   0.045s] ( 456/1017) amm-core::integration services::manager::layer_replies::retain_forgets_the_reply_of_a_layer_that_is_no_longer_drawn
+        PASS [   0.054s] ( 457/1017) amm-core::integration services::manager::layer_replies::a_hud_layer_never_covers_the_screen
+        PASS [   0.044s] ( 458/1017) amm-core::integration services::manager::layer_replies::the_key_layer_is_the_layer_that_wants_the_keyboard_and_the_overlay_layer_when_both_do
+        PASS [   0.068s] ( 459/1017) amm-core::integration services::manager::layer_replies::an_overlay_layer_covers_the_screen_within_one_pixel_and_a_small_one_does_not
+        PASS [   0.071s] ( 460/1017) amm-core::integration services::manager::layer_replies::the_key_layer_falls_back_to_the_overlay_layer_then_the_hud_layer
+        PASS [   0.034s] ( 461/1017) amm-core::integration services::manager::locale_events::older_mod_gets_no_locale_event
+        PASS [   0.091s] ( 462/1017) amm-core::integration services::manager::icon::unregister_frees_the_icon
+        PASS [   0.061s] ( 463/1017) amm-core::integration services::manager::locale_events::set_locale_to_the_same_code_sends_nothing
+        PASS [   0.069s] ( 464/1017) amm-core::integration services::manager::locale_events::a_mod_that_unregisters_stops_being_a_reader
+        PASS [   0.039s] ( 465/1017) amm-core::integration services::manager::manager_service::a_hud_layer_that_wants_the_pointer_keeps_it_when_the_overlay_layer_of_the_mod_does_not
+        PASS [   0.068s] ( 466/1017) amm-core::integration services::manager::manager_service::a_click_over_the_top_layer_that_wants_the_pointer_goes_to_that_mod
+        PASS [   0.066s] ( 467/1017) amm-core::integration services::manager::manager_service::a_new_mod_in_a_reused_slot_gets_no_stray_key_up
+        PASS [   0.049s] ( 468/1017) amm-core::integration services::manager::manager_service::a_second_edit_within_the_window_merges_into_one_write
+        PASS [   0.049s] ( 469/1017) amm-core::integration services::manager::manager_service::a_suspended_hud_removes_only_the_hud_layer_of_that_mod
+        PASS [   0.100s] ( 470/1017) amm-core::integration services::manager::manager_service::a_hud_layer_that_comes_back_does_not_keep_the_keyboard_it_wanted_before
+        PASS [   0.077s] ( 471/1017) amm-core::integration services::manager::manager_service::a_mod_with_hud_and_overlay_gets_two_layers_hud_below_every_overlay
+        PASS [   0.108s] ( 472/1017) amm-core::integration services::manager::manager_service::a_mod_disabled_in_the_config_gets_disabled_first
+        PASS [   0.057s] ( 473/1017) amm-core::integration services::manager::manager_service::an_edit_is_written_one_merge_window_after_it_with_no_save_action
+        PASS [   0.096s] ( 474/1017) amm-core::integration services::manager::manager_service::a_refused_write_toasts_and_is_queued_again
+        PASS [   0.067s] ( 475/1017) amm-core::integration services::manager::manager_service::disable_releases_and_forgets_watch
+        PASS [   0.110s] ( 476/1017) amm-core::integration services::manager::manager_service::acquire_denial_pushes_a_denied_toast
+        PASS [   0.074s] ( 477/1017) amm-core::integration services::manager::manager_service::blocked_table_follows_a_resolution_change
+        PASS [   0.088s] ( 478/1017) amm-core::integration services::manager::manager_service::block_player_turn_and_pass_pointer_motion_stay_independent
+        PASS [   0.041s] ( 479/1017) amm-core::integration services::manager::manager_service::failures_must_be_consecutive_to_disable_a_mod
+        PASS [   0.107s] ( 480/1017) amm-core::integration services::manager::manager_service::burst_of_set_setting_gives_one_due_write_per_500_ms
+        PASS [   0.056s] ( 481/1017) amm-core::integration services::manager::manager_service::input_lease_granted_to_other_releases_fake_keys
+        PASS [   0.068s] ( 482/1017) amm-core::integration services::manager::manager_service::full_event_queue_drops_are_counted_in_telemetry
+        PASS [   0.129s] ( 483/1017) amm-core::integration services::manager::manager_service::disabling_a_mod_releases_its_leases_and_drops_its_layer
+        PASS [   0.108s] ( 484/1017) amm-core::integration services::manager::manager_service::focus_lost_releases_and_notifies
+        PASS [   0.067s] ( 485/1017) amm-core::integration services::manager::manager_service::key_down_is_false_for_a_mod_without_input
+        PASS [   0.130s] ( 486/1017) amm-core::integration services::manager::manager_service::disabling_a_mod_writes_the_manager_config_and_keeps_comments
+        PASS [   0.043s] ( 487/1017) amm-core::integration services::manager::manager_service::panel_open_releases
+        PASS [   0.136s] ( 488/1017) amm-core::integration services::manager::manager_service::focus_lost_releases_every_held_key_to_its_receiver
+        PASS [   0.060s] ( 489/1017) amm-core::integration services::manager::manager_service::panel_close_keeps_fake_keys
+        PASS [   0.117s] ( 490/1017) amm-core::integration services::manager::manager_service::hud_claim_with_hide_vanilla_hud_hides_it_until_release
+        PASS [   0.044s] ( 491/1017) amm-core::integration services::manager::manager_service::register_checks_the_document_and_returns_warnings
+        PASS [   0.085s] ( 492/1017) amm-core::integration services::manager::manager_service::keybind_press_is_not_sent_to_watchers
+        PASS [   0.035s] ( 493/1017) amm-core::integration services::manager::manager_service::registering_a_valid_file_queues_no_write
+        PASS [   0.036s] ( 494/1017) amm-core::integration services::manager::manager_service::register_refuses_a_bad_descriptor_and_a_duplicate_id
+        PASS [   0.064s] ( 495/1017) amm-core::integration services::manager::manager_service::rebinding_the_panel_toggle_writes_toggle_chord_and_routes_the_new_chord
+        FAIL [   0.064s] ( 496/1017) amm-core::integration services::manager::manager_service::real_up_is_held_back_while_faked
+  stdout ───
+
+    running 1 test
+    test services::manager::manager_service::real_up_is_held_back_while_faked ... FAILED
+
+    failures:
+
+    failures:
+        services::manager::manager_service::real_up_is_held_back_while_faked
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 381 filtered out; finished in 0.01s
+
+  stderr ───
+
+    thread 'services::manager::manager_service::real_up_is_held_back_while_faked' (27804) panicked at crates\amm-core\tests\services\manager\manager_service.rs:956:5:
+    assertion failed: !down.consume_from_game
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+  Cancelling due to test failure: 7 tests still running
+        PASS [   0.049s] ( 497/1017) amm-core::integration services::manager::manager_service::release_keeps_the_up_back_while_the_real_key_is_down
+        PASS [   0.034s] ( 498/1017) amm-core::integration services::manager::manager_service::send_key_up_after_a_hold_queues_the_up
+        PASS [   0.047s] ( 499/1017) amm-core::integration services::manager::manager_service::send_key_down_twice_queues_one_op
+        PASS [   0.066s] ( 500/1017) amm-core::integration services::manager::manager_service::save_status_goes_saving_then_saved_then_idle_and_failed_on_a_refused_write
+        FAIL [   0.038s] ( 501/1017) amm-core::integration services::manager::manager_service::send_key_up_while_real_key_down_sends_nothing
+  stdout ───
+
+    running 1 test
+    test services::manager::manager_service::send_key_up_while_real_key_down_sends_nothing ... FAILED
+
+    failures:
+
+    failures:
+        services::manager::manager_service::send_key_up_while_real_key_down_sends_nothing
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 381 filtered out; finished in 0.01s
+
+  stderr ───
+
+    thread 'services::manager::manager_service::send_key_up_while_real_key_down_sends_nothing' (50064) panicked at crates\amm-core\tests\services\manager\manager_service.rs:992:5:
+    assertion failed: !up.consume_from_game
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        PASS [   0.046s] ( 502/1017) amm-core::integration services::manager::manager_service::send_key_up_allowed_while_other_holds_input
+        PASS [   0.046s] ( 503/1017) amm-core::integration services::manager::manager_service::send_key_up_without_a_hold_queues_nothing
+────────────
+     Summary [   3.485s] 503/1017 tests run: 501 passed, 2 failed, 0 skipped
+        FAIL [   0.064s] ( 496/1017) amm-core::integration services::manager::manager_service::real_up_is_held_back_while_faked
+        FAIL [   0.038s] ( 501/1017) amm-core::integration services::manager::manager_service::send_key_up_while_real_key_down_sends_nothing
+warning: 514/1017 tests were not run due to test failure (run with --no-fail-fast to run all tests, or run with --max-fail)
+error: test run failed
+[test] ERROR task failed

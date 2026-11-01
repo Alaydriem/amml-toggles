@@ -1,0 +1,7 @@
+[check] $ cargo check --workspace --all-targets
+    Checking toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.22s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.82s
+[check] $ cargo fmt --all --check

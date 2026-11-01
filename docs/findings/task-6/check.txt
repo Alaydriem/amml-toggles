@@ -1,0 +1,7 @@
+[check] $ cargo check --workspace --all-targets
+    Checking toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.40s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.53s
+[check] $ cargo fmt --all --check

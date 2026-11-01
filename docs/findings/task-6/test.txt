@@ -1,0 +1,25 @@
+[test] $ cargo nextest run --workspace
+   Compiling toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.72s
+────────────
+ Nextest run ID 447dda40-9f24-41bc-ba46-1b1f97ca84bc with nextest profile: default
+    Starting 17 tests across 3 binaries
+        PASS [   0.019s] ( 1/17) toggles-core::integration services::toggle_controller::death_reset_respects_setting
+        PASS [   0.026s] ( 2/17) toggles-core::integration services::toggle_controller::focus_lost_always_resets
+        PASS [   0.033s] ( 3/17) toggles-core::integration services::toggle_controller::chord_ignored_outside_gameplay
+        PASS [   0.038s] ( 4/17) toggles-core::integration services::toggle_controller::d_does_not_cancel_walk
+        PASS [   0.040s] ( 5/17) toggles-core::integration services::toggle_controller::game_key_change_releases_old_key
+        PASS [   0.049s] ( 6/17) toggles-core::integration services::toggle_controller::disabling_walk_while_on_releases
+        PASS [   0.052s] ( 7/17) toggles-core::integration config::toggles_config::default_matches_spec
+        PASS [   0.058s] ( 8/17) toggles-core::integration services::toggle_controller::chord_ignored_when_disabled
+        PASS [   0.045s] ( 9/17) toggles-core::integration services::toggle_controller::manager_released_clears_without_commands
+        PASS [   0.046s] (10/17) toggles-core::integration services::toggle_controller::menu_reset_respects_setting
+        PASS [   0.043s] (11/17) toggles-core::integration services::toggle_controller::real_sneak_key_cancels_sneak
+        PASS [   0.047s] (12/17) toggles-core::integration services::toggle_controller::repeat_key_down_is_not_a_cancel
+        PASS [   0.051s] (13/17) toggles-core::integration services::toggle_controller::s_cancels_walk
+        PASS [   0.072s] (14/17) toggles-core::integration services::toggle_controller::sneak_chord_turns_on_and_off
+        PASS [   0.074s] (15/17) toggles-core::integration services::toggle_controller::w_cancels_walk
+        PASS [   0.073s] (16/17) toggles-core::integration services::toggle_controller::walk_chord_turns_on_and_off
+        PASS [   0.072s] (17/17) toggles-core::integration services::toggle_controller::world_exit_always_resets
+────────────
+     Summary [   0.138s] 17 tests run: 17 passed, 0 skipped

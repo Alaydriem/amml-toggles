@@ -1,0 +1,10 @@
+[check] $ cargo check --workspace --all-targets
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Checking toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.76s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.86s
+[check] $ cargo fmt --all --check

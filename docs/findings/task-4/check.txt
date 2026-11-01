@@ -1,0 +1,19 @@
+[check] $ cargo check --workspace --all-targets
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Checking amm-bench v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-bench)
+    Checking amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+    Checking amm-e2e v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-e2e)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.70s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Checking amm-bench v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-bench)
+    Checking amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+    Checking amm-e2e v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-e2e)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.96s
+[check] $ cargo check -p amm-client --no-default-features --features test-support
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.56s
+[check] $ cargo clippy -p amm-client --no-default-features --features test-support -- -D warnings
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.63s
+[check] $ cargo fmt --check -p amm-core -p amm-abi -p amm-store -p amm-ui -p amm-client -p amm-ffi -p amm-overlay -p amm-amml -p amm-bench -p amm-e2e

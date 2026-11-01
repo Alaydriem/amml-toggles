@@ -1,0 +1,115 @@
+[test] $ cargo nextest run --workspace --no-tests=pass
+   Compiling amm-ffi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ffi)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+error[E0609]: no field `watch_keys` on type `AmmApi`
+  --> crates\amm-abi\tests\types\layout.rs:47:35
+   |
+47 |     assert_eq!(offset_of!(AmmApi, watch_keys), 16 + 29 * 8);
+   |                                   ^^^^^^^^^^
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `AmmApi`
+  --> crates\amm-abi\tests\types\layout.rs:48:35
+   |
+48 |     assert_eq!(offset_of!(AmmApi, send_key), 16 + 30 * 8);
+   |                                   ^^^^^^^^
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `AmmApi`
+  --> crates\amm-abi\tests\types\layout.rs:54:32
+   |
+54 |     assert!(offset_of!(AmmApi, send_key) > offset_of!(AmmApi, capture_stream_give_back));
+   |                                ^^^^^^^^
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `watch_keys` on type `AmmApi`
+  --> crates\amm-abi\tests\types\layout.rs:55:32
+   |
+55 |     assert!(offset_of!(AmmApi, watch_keys) > offset_of!(AmmApi, capture_stream_give_back));
+   |                                ^^^^^^^^^^
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `AmmApi`
+  --> crates\amm-abi\tests\types\layout.rs:56:32
+   |
+56 |     assert!(offset_of!(AmmApi, send_key) + size_of::<usize>() <= size_of::<AmmApi>());
+   |                                ^^^^^^^^
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `AmmApi`
+   --> crates\amm-abi\tests\types\layout.rs:392:35
+    |
+392 |     assert_eq!(offset_of!(AmmApi, send_key) + 8, size_of::<AmmApi>());
+    |                                   ^^^^^^^^
+    |
+    = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+For more information about this error, try `rustc --explain E0609`.
+error: could not compile `amm-abi` (test "integration") due to 6 previous errors
+warning: build failed, waiting for other jobs to finish...
+error[E0432]: unresolved import `amm_ffi::host::amm_host_take_fake_keys`
+ --> crates\amm-ffi\tests\api\key_output.rs:2:5
+  |
+2 | use amm_ffi::host::amm_host_take_fake_keys;
+  |     ^^^^^^^^^^^^^^^-----------------------
+  |                    |
+  |                    no `amm_host_take_fake_keys` in `host`
+
+error[E0432]: unresolved import `amm_ffi::types::AmmHostFakeKey`
+ --> crates\amm-ffi\tests\api\key_output.rs:3:5
+  |
+3 | use amm_ffi::types::AmmHostFakeKey;
+  |     ^^^^^^^^^^^^^^^^--------------
+  |                     |
+  |                     no `AmmHostFakeKey` in `types`
+
+error[E0432]: unresolved import `amm_ffi::types::AmmHostFakeKey`
+ --> crates\amm-ffi\tests\types\host_fake_key.rs:3:5
+  |
+3 | use amm_ffi::types::AmmHostFakeKey;
+  |     ^^^^^^^^^^^^^^^^--------------
+  |                     |
+  |                     no `AmmHostFakeKey` in `types`
+
+error[E0609]: no field `watch_keys` on type `&AmmApi`
+   --> crates\amm-ffi\tests\api\contract.rs:143:17
+    |
+143 |     assert!(api.watch_keys.is_some() && api.send_key.is_some());
+    |                 ^^^^^^^^^^ unknown field
+    |
+    = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `&AmmApi`
+   --> crates\amm-ffi\tests\api\contract.rs:143:45
+    |
+143 |     assert!(api.watch_keys.is_some() && api.send_key.is_some());
+    |                                             ^^^^^^^^ unknown field
+    |
+    = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `send_key` on type `&'static AmmApi`
+  --> crates\amm-ffi\tests\api\key_output.rs:11:30
+   |
+11 |     unsafe { TestHost::api().send_key.unwrap_or_else(|| panic!("send_key"))(handle, vk, down) }
+   |                              ^^^^^^^^ unknown field
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+error[E0609]: no field `watch_keys` on type `&'static AmmApi`
+  --> crates\amm-ffi\tests\api\key_output.rs:40:33
+   |
+40 |     let watch = TestHost::api().watch_keys.unwrap_or_else(|| panic!("watch_keys"));
+   |                                 ^^^^^^^^^^ unknown field
+   |
+   = note: available fields are: `size`, `abi_major`, `abi_minor`, `register`, `unregister` ... and 27 others
+
+Some errors have detailed explanations: E0432, E0609.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `amm-ffi` (test "integration") due to 7 previous errors
+error: command `'C:\Users\charl\.rustup\toolchains\1.98.0-x86_64-pc-windows-msvc\bin\cargo.exe' test --no-run --message-format json-render-diagnostics --workspace` exited with code 101
+[test] ERROR task failed

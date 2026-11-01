@@ -1,0 +1,10 @@
+[preflight] $ rustc --version
+rustc 1.98.0 (88d9e12ae 2026-08-18)
+[preflight] $ cargo --version
+cargo 1.98.0 (797e8a9bc 2026-08-05)
+[preflight] $ cargo nextest --version
+cargo-nextest 0.9.137 (75ddba7e9 2026-05-26)
+release: 0.9.137
+commit-hash: 75ddba7e911b44c5c0700dac0415d824403de9bd
+commit-date: 2026-05-26
+host: x86_64-pc-windows-msvc

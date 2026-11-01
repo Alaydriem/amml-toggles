@@ -1,0 +1,4 @@
+[build-mod] $ cargo build --release -p amm-amml
+   Compiling amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+    Finished `release` profile [optimized] target(s) in 2.21s
+built dist/alaydriem-mod-manager

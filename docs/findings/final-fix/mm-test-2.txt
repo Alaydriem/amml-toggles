@@ -1,0 +1,149 @@
+[test] $ cargo nextest run --workspace --no-tests=pass
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-ui v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ui)
+   Compiling amm-store v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-store)
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+   Compiling amm-ffi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ffi)
+   Compiling amm-overlay v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-overlay)
+   Compiling amm-bench v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-bench)
+   Compiling amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+   Compiling amm-e2e v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-e2e)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 41.08s
+────────────
+ Nextest run ID d10ff513-071f-4fd3-b8df-014d9a57d465 with nextest profile: default
+    Starting 1039 tests across 21 binaries
+        PASS [   0.020s] (   1/1039) amm-abi::integration convert::event::fake_keys_released_round_trips
+        PASS [   0.028s] (   2/1039) amm-abi::integration convert::capability::capability_byte_out_of_range_is_rejected
+        PASS [   0.036s] (   3/1039) amm-abi::integration convert::acquire::every_outcome_survives_core_to_abi_to_core
+        PASS [   0.045s] (   4/1039) amm-abi::integration convert::event::an_unknown_capability_byte_is_rejected
+        PASS [   0.051s] (   5/1039) amm-abi::integration convert::frame::a_bad_cursor_byte_is_rejected
+        PASS [   0.061s] (   6/1039) amm-abi::integration convert::acquire::denied_carries_the_holder_and_the_others_carry_no_holder
+        PASS [   0.068s] (   7/1039) amm-abi::integration convert::event::every_event_kind_survives_core_to_abi_to_core
+        PASS [   0.077s] (   8/1039) amm-abi::integration convert::event::an_unknown_phase_byte_is_rejected
+        PASS [   0.065s] (   9/1039) amm-abi::integration convert::frame::every_cursor_byte_in_range_converts_to_the_matching_core_shape
+        PASS [   0.065s] (  10/1039) amm-abi::integration convert::frame::frame_output_with_bad_wants_or_cursor_is_rejected
+        PASS [   0.061s] (  11/1039) amm-abi::integration convert::frame::frame_output_with_good_values_converts
+        PASS [   0.060s] (  12/1039) amm-abi::integration convert::frame::frame_output_with_size_below_base_is_invalid
+        PASS [   0.063s] (  13/1039) amm-abi::integration convert::log_level::log_level_byte_out_of_range_is_rejected
+        PASS [   0.102s] (  14/1039) amm-abi::integration convert::mesh::a_draw_cmd_with_a_bad_sampler_byte_is_rejected
+        PASS [   0.102s] (  15/1039) amm-abi::integration convert::mesh::a_texture_delta_with_a_bad_sampler_or_full_byte_is_rejected
+        PASS [   0.098s] (  16/1039) amm-abi::integration convert::mesh::an_empty_mesh_reports_zero_counts
+        PASS [   0.100s] (  17/1039) amm-abi::integration convert::mesh::mesh_view_borrows_the_buffers_without_copying
+        PASS [   0.102s] (  18/1039) amm-abi::integration convert::screenshot_layers::a_layers_byte_other_than_0_or_1_is_rejected
+        PASS [   0.101s] (  19/1039) amm-abi::integration convert::status::a_missing_manager_status_becomes_a_missing_manager_link_error
+        PASS [   0.108s] (  20/1039) amm-abi::integration convert::status::a_status_integer_converts_back_and_an_unknown_one_is_rejected
+        PASS [   0.105s] (  21/1039) amm-abi::integration convert::status::any_other_status_keeps_its_code_in_the_link_error
+        PASS [   0.061s] (  22/1039) amm-abi::integration convert::status::capture_errors_map_to_their_status_and_busy_has_its_own
+        PASS [   0.063s] (  23/1039) amm-abi::integration convert::status::descriptor_errors_map_to_invalid_descriptor
+        PASS [   0.065s] (  24/1039) amm-abi::integration convert::status::manager_errors_delegate_to_the_inner_mapping
+        PASS [   0.067s] (  25/1039) amm-abi::integration convert::status::registry_errors_map_to_their_own_status
+        PASS [   0.060s] (  26/1039) amm-abi::integration types::layout::abi_draw_cmd_and_ui_event_field_offsets_match_core
+        PASS [   0.066s] (  27/1039) amm-abi::integration types::layout::abi_draw_cmd_matches_core_draw_cmd_layout
+        PASS [   0.061s] (  28/1039) amm-abi::integration types::layout::abi_texture_delta_matches_core_texture_delta_layout
+        PASS [   0.066s] (  29/1039) amm-abi::integration types::layout::abi_ui_event_matches_core_ui_event_layout
+        PASS [   0.066s] (  30/1039) amm-abi::integration types::layout::abi_vertex_matches_core_vertex_layout
+        PASS [   0.064s] (  31/1039) amm-abi::integration types::layout::api_size_covers_send_key
+        PASS [   0.065s] (  32/1039) amm-abi::integration types::layout::api_table_field_offsets_are_stable
+        PASS [   0.065s] (  33/1039) amm-abi::integration types::layout::callbacks_layout_is_stable
+        PASS [   0.067s] (  34/1039) amm-abi::integration types::layout::capture_stream_frame_layout_is_stable
+        PASS [   0.066s] (  35/1039) amm-abi::integration types::layout::capture_stream_request_layout_is_stable
+        PASS [   0.064s] (  36/1039) amm-abi::integration types::layout::draw_cmd_layout_is_stable
+        PASS [   0.061s] (  37/1039) amm-abi::integration types::layout::enum_values_match_their_mirrors
+        PASS [   0.060s] (  38/1039) amm-abi::integration types::layout::event_layout_is_stable
+        PASS [   0.059s] (  39/1039) amm-abi::integration types::layout::frame_input_layout_is_stable
+        PASS [   0.055s] (  40/1039) amm-abi::integration types::layout::frame_output_layout_is_stable
+        PASS [   0.062s] (  41/1039) amm-abi::integration types::layout::mesh_view_layout_is_stable
+        PASS [   0.059s] (  42/1039) amm-abi::integration types::layout::render_size_state_layout_is_stable
+        PASS [   0.056s] (  43/1039) amm-abi::integration types::layout::sized_structs_end_without_tail_padding
+        PASS [   0.064s] (  44/1039) amm-abi::integration types::layout::sized_structs_start_with_size_and_base_fits
+        PASS [   0.059s] (  45/1039) amm-abi::integration types::layout::small_value_types_layout_is_stable
+        PASS [   0.063s] (  46/1039) amm-abi::integration types::layout::texture_delta_layout_is_stable
+        PASS [   0.068s] (  47/1039) amm-abi::integration types::layout::ui_event_layout_is_stable
+        PASS [   0.074s] (  48/1039) amm-abi::integration types::layout::vertex_layout_is_stable
+        PASS [   0.064s] (  49/1039) amm-abi::integration types::layout::wire_values_are_stable
+        PASS [   0.066s] (  50/1039) amm-amml::integration dup_guard::a_copy_loaded_under_another_name_stays_off
+        PASS [   0.110s] (  51/1039) amm-amml::integration dll_exports::the_dll_exports_only_the_api_getter_and_the_amml_entry_points
+        PASS [   0.084s] (  52/1039) amm-amml::integration game_hooks::grab::the_game_grab_is_skipped_while_the_cursor_is_free_and_its_this_is_kept
+        PASS [   0.069s] (  53/1039) amm-amml::integration game_hooks::keys::a_consumed_key_never_reaches_the_game
+        PASS [   0.050s] (  54/1039) amm-amml::integration game_hooks::keys::a_key_the_host_leaves_reaches_the_game_unchanged
+        PASS [   0.165s] (  55/1039) amm-amml::integration api_export::a_client_finds_the_table_of_the_dll_loaded_under_the_manager_name
+        PASS [   0.035s] (  56/1039) amm-amml::integration game_hooks::tick::a_panic_in_the_tick_calls_the_original_once_and_switches_the_manager_off
+        PASS [   0.056s] (  57/1039) amm-amml::integration game_hooks::keys::a_real_key_down_sets_where_fake_keys_go
+        PASS [   0.046s] (  58/1039) amm-amml::integration game_hooks::mouse::a_consumed_button_is_cancelled_and_a_free_one_passes_with_the_viewport_point
+        PASS [   0.161s] (  59/1039) amm-amml::integration dup_guard::the_copy_mods_find_passes
+        PASS [   0.183s] (  60/1039) amm-amml::integration dup_guard::enable_starts_when_this_copy_is_the_one_mods_find
+        PASS [   0.044s] (  61/1039) amm-amml::integration game_hooks::tick::a_tick_runs_after_the_original_and_readies_the_overlay
+        PASS [   0.219s] (  62/1039) amm-amml::integration dup_guard::a_second_copy_from_another_folder_names_the_first_and_stays_off
+        PASS [   0.202s] (  63/1039) amm-amml::integration dup_guard::enable_stays_off_when_a_manager_loaded_first_and_this_copy_came_after
+        PASS [   0.080s] (  64/1039) amm-amml::integration game_hooks::mouse::a_consumed_movement_is_cancelled
+        PASS [   0.044s] (  65/1039) amm-amml::integration game_hooks::turn::the_turn_is_dropped_while_the_host_blocks_it
+        PASS [   0.100s] (  66/1039) amm-amml::integration game_hooks::world::a_loaded_world_reaches_the_host_before_the_original
+        PASS [   0.068s] (  67/1039) amm-amml::integration services::fake_key_sender::flush_sends_in_order_with_last_origin
+        PASS [   0.100s] (  68/1039) amm-amml::integration manager_mod::the_manifest_lists_every_hooked_and_called_entry
+        PASS [   0.075s] (  69/1039) amm-amml::integration manager_mod::the_manifest_names_the_mod_and_the_dll_mods_look_for
+        PASS [   0.091s] (  70/1039) amm-amml::integration services::frame_state::nothing_is_published_while_the_latch_is_raised
+        PASS [   0.091s] (  71/1039) amm-amml::integration services::frame_state::the_safe_state_is_published_once_until_a_frame_runs_again
+        PASS [   0.109s] (  72/1039) amm-amml::integration services::fake_key_sender::flush_without_controller_keeps_ops
+        PASS [   0.055s] (  73/1039) amm-amml::integration services::game_hook_set::a_missing_optional_entry_logs_one_line_and_the_rest_install
+        PASS [   0.055s] (  74/1039) amm-amml::integration services::game_hook_set::a_missing_required_entry_fails_and_installs_nothing
+        PASS [   0.155s] (  75/1039) amm-amml::integration game_hooks::world::leaving_a_world_reaches_the_host_before_the_original_and_forgets_the_client
+        PASS [   0.054s] (  76/1039) amm-amml::integration services::game_hook_set::a_refused_hook_removes_every_hook_already_installed
+        PASS [   0.064s] (  77/1039) amm-amml::integration services::game_hook_set::removing_a_group_unhooks_only_that_group
+        PASS [   0.054s] (  78/1039) amm-amml::integration services::game_pointer::a_minimised_window_moves_nothing
+        PASS [   0.062s] (  79/1039) amm-amml::integration services::game_pointer::outside_the_viewport_or_before_a_bind_nothing_moves
+        PASS [   0.053s] (  80/1039) amm-amml::integration services::game_pointer::the_host_gets_the_buffer_point_and_client_size_and_its_point_is_used_as_it_is
+        PASS [   0.060s] (  81/1039) amm-amml::integration services::game_slots::a_missing_get_options_logs_one_line_and_only_hide_hud_is_off
+        PASS [   0.051s] (  82/1039) amm-amml::integration services::game_slots::a_missing_required_slot_fails_and_keeps_nothing
+        PASS [   0.063s] (  83/1039) amm-amml::integration services::hud_control::a_player_who_hid_the_hud_keeps_it_hidden
+        PASS [   0.076s] (  84/1039) amm-amml::integration services::game_slots::every_optional_slot_names_its_feature
+        PASS [   0.065s] (  85/1039) amm-amml::integration services::hud_control::restore_puts_the_saved_value_back_once
+        PASS [   0.063s] (  86/1039) amm-amml::integration services::hud_control::without_options_the_hud_is_untouched
+        PASS [   0.073s] (  87/1039) amm-amml::integration services::hud_control::the_players_setting_comes_back_after_hide_vanilla_hud_turns_off
+        PASS [   0.063s] (  88/1039) amm-amml::integration services::key_state::a_focus_loss_forgets_the_held_keys
+        PASS [   0.065s] (  89/1039) amm-amml::integration services::key_state::a_held_key_repeats_on_the_second_down
+        PASS [   0.070s] (  90/1039) amm-amml::integration services::key_state::left_shift_down_then_up_is_shift_down_and_up_with_no_repeat
+        PASS [   0.064s] (  91/1039) amm-amml::integration services::key_state::the_host_answer_decides_the_consume
+        PASS [   0.060s] (  92/1039) amm-amml::integration services::manager_input_sink::the_cursor_is_the_one_of_the_last_host_frame
+        PASS [   0.098s] (  93/1039) amm-amml::integration services::manager_lifecycle::a_leaked_overlay_keeps_the_host_and_the_next_enable_reuses_it
+        PASS [   0.092s] (  94/1039) amm-amml::integration services::manager_lifecycle::an_enable_that_fails_on_a_hook_after_a_leak_logs_why_the_host_stays
+        PASS [   0.099s] (  95/1039) amm-amml::integration services::manager_lifecycle::a_router_that_did_not_drain_keeps_the_host_alive
+        PASS [   0.092s] (  96/1039) amm-amml::integration services::manager_lifecycle::an_enable_that_fails_on_a_hook_stops_the_host_it_started
+        PASS [   0.088s] (  97/1039) amm-amml::integration services::manager_lifecycle::disable_closes_the_render_size_before_the_overlay_and_posts_the_restore_after_it
+        PASS [   0.124s] (  98/1039) amm-amml::integration services::manager_lifecycle::a_mod_that_unregisters_after_the_host_is_destroyed_gets_manager_missing
+        PASS [   0.113s] (  99/1039) amm-amml::integration services::manager_lifecycle::disable_posts_no_restore_when_nothing_was_forced
+        PASS [   0.123s] ( 100/1039) amm-amml::integration services::manager_lifecycle::disable_drains_every_call_before_the_host_stops
+        PASS [   0.074s] ( 101/1039) amm-amml::integration services::manager_lifecycle::disable_posts_the_restore_when_the_overlay_leaked
+        FAIL [   0.112s] ( 102/1039) amm-amml::integration services::manager_lifecycle::disable_releases_and_flushes_fake_keys_before_removing_hooks
+  stdout ───
+
+    running 1 test
+    test services::manager_lifecycle::disable_releases_and_flushes_fake_keys_before_removing_hooks ... FAILED
+
+    failures:
+
+    failures:
+        services::manager_lifecycle::disable_releases_and_flushes_fake_keys_before_removing_hooks
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 70 filtered out; finished in 0.01s
+
+  stderr ───
+
+    thread 'services::manager_lifecycle::disable_releases_and_flushes_fake_keys_before_removing_hooks' (51000) panicked at crates\amm-amml\tests\services\manager_lifecycle.rs:113:75:
+    called `Option::unwrap()` on a `None` value
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+  Cancelling due to test failure: 7 tests still running
+        PASS [   0.123s] ( 103/1039) amm-amml::integration services::manager_lifecycle::disable_sends_no_fake_keys_once_the_game_stopped_ticking
+        PASS [   0.128s] ( 104/1039) amm-amml::integration services::manager_lifecycle::enable_starts_the_host_before_any_hook
+        PASS [   0.128s] ( 105/1039) amm-amml::integration services::manager_lifecycle::nothing_is_restored_once_the_game_stopped_ticking
+        PASS [   0.122s] ( 106/1039) amm-amml::integration services::manager_lifecycle::nothing_is_restored_when_the_game_never_ticked
+        PASS [   0.101s] ( 107/1039) amm-amml::integration services::menu_screen::the_pause_screen_gives_2_and_its_string_is_freed_once
+        PASS [   0.105s] ( 108/1039) amm-amml::integration services::manager_runtime::tick_flushes_after_host_tick
+        PASS [   0.106s] ( 109/1039) amm-amml::integration services::manager_lifecycle::the_mouse_stays_free_when_the_window_is_in_the_background
+────────────
+     Summary [   1.111s] 109/1039 tests run: 108 passed, 1 failed, 0 skipped
+        FAIL [   0.112s] ( 102/1039) amm-amml::integration services::manager_lifecycle::disable_releases_and_flushes_fake_keys_before_removing_hooks
+warning: 930/1039 tests were not run due to test failure (run with --no-fail-fast to run all tests, or run with --max-fail)
+error: test run failed
+[test] ERROR task failed

@@ -1,0 +1,8 @@
+[build-mod] $ cargo build --release -p toggles-amml
+   Compiling toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `release` profile [optimized] target(s) in 11.19s
+built dist/alaydriem-toggles

@@ -1,0 +1,291 @@
+[test] $ cargo nextest run --workspace --no-tests=pass
+   Compiling amm-ui v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-ui)
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+error[E0432]: unresolved import `amm_core::services::input::FakeKeys`
+ --> crates\amm-core\tests\services\input\fake_keys.rs:1:5
+  |
+1 | use amm_core::services::input::FakeKeys;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^--------
+  |                                |
+  |                                no `FakeKeys` in `services::input`
+
+error[E0432]: unresolved import `amm_core::structs::input::FakeKeyOp`
+ --> crates\amm-core\tests\services\input\fake_keys.rs:2:5
+  |
+2 | use amm_core::structs::input::FakeKeyOp;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^---------
+  |                               |
+  |                               no `FakeKeyOp` in `structs::input`
+
+error[E0432]: unresolved import `amm_core::services::input::KeyWatch`
+ --> crates\amm-core\tests\services\input\key_watch.rs:1:5
+  |
+1 | use amm_core::services::input::KeyWatch;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^--------
+  |                                |
+  |                                no `KeyWatch` in `services::input`
+
+error[E0432]: unresolved import `amm_core::structs::input::FakeKeyOp`
+  --> crates\amm-core\tests\services\manager\manager_service.rs:10:32
+   |
+10 | use amm_core::structs::input::{FakeKeyOp, InputEvent, Modifiers};
+   |                                ^^^^^^^^^ no `FakeKeyOp` in `structs::input`
+
+error[E0599]: no method named `take_fake_keys` found for mutable reference `&mut ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:885:13
+    |
+885 |     manager.take_fake_keys(&mut out);
+    |             ^^^^^^^^^^^^^^ method not found in `&mut ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:901:13
+    |
+901 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+    |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:913:13
+    |
+913 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+    |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:927:13
+    |
+927 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+    |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:942:13
+    |
+942 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:956:13
+    |
+956 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:957:13
+    |
+957 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:967:13
+    |
+967 |     manager.send_key(m, KEY_SHIFT, false).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:976:13
+    |
+976 |     manager.send_key(m, KEY_W, true).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:979:13
+    |
+979 |     manager.send_key(m, KEY_W, false).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:990:13
+    |
+990 |     manager.send_key(m, KEY_W, true).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+   --> crates\amm-core\tests\services\manager\manager_service.rs:992:13
+    |
+992 |     manager.send_key(m, KEY_W, false).expect("claims Input");
+    |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1001:13
+     |
+1001 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `FakeKeysReleased` found for enum `ModEvent` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1006:57
+     |
+1006 |     assert!(events(&mut manager, m).contains(&ModEvent::FakeKeysReleased));
+     |                                                         ^^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ModEvent`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1013:13
+     |
+1013 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1014:13
+     |
+1014 |     manager.send_key(m, KEY_W, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `world_left` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1017:13
+     |
+1017 |     manager.world_left();
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `FakeKeysReleased` found for enum `ModEvent` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1020:57
+     |
+1020 |     assert!(events(&mut manager, m).contains(&ModEvent::FakeKeysReleased));
+     |                                                         ^^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ModEvent`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1027:13
+     |
+1027 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `FakeKeysReleased` found for enum `ModEvent` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1032:57
+     |
+1032 |     assert!(events(&mut manager, m).contains(&ModEvent::FakeKeysReleased));
+     |                                                         ^^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ModEvent`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1041:13
+     |
+1041 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1052:13
+     |
+1052 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `world_left` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1054:13
+     |
+1054 |     manager.world_left();
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `FakeKeysReleased` found for enum `ModEvent` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1057:57
+     |
+1057 |     assert!(events(&mut manager, m).contains(&ModEvent::FakeKeysReleased));
+     |                                                         ^^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ModEvent`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1064:13
+     |
+1064 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1065:13
+     |
+1065 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `FakeKeysReleased` found for enum `ModEvent` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1073:37
+     |
+1073 |     assert!(got.contains(&ModEvent::FakeKeysReleased));
+     |                                     ^^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ModEvent`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1081:13
+     |
+1081 |     manager.send_key(m, KEY_SHIFT, true).expect("claims Input");
+     |             ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1092:13
+     |
+1092 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1106:24
+     |
+1106 |     assert_eq!(manager.send_key(m, KEY_SHIFT, true), Err(ManagerError::NotPermitted));
+     |                        ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1107:24
+     |
+1107 |     assert_eq!(manager.watch_keys(m, &[KEY_W]), Err(ManagerError::NotPermitted));
+     |                        ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1116:24
+     |
+1116 |     assert_eq!(manager.send_key(m, 256, true), Err(ManagerError::InvalidArgument));
+     |                        ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `InvalidArgument` found for enum `ManagerError` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1116:66
+     |
+1116 |     assert_eq!(manager.send_key(m, 256, true), Err(ManagerError::InvalidArgument));
+     |                                                                  ^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ManagerError`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1117:24
+     |
+1117 |     assert_eq!(manager.watch_keys(m, &[KEY_W, 256]), Err(ManagerError::InvalidArgument));
+     |                        ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `InvalidArgument` found for enum `ManagerError` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1117:72
+     |
+1117 |     assert_eq!(manager.watch_keys(m, &[KEY_W, 256]), Err(ManagerError::InvalidArgument));
+     |                                                                        ^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ManagerError`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1118:24
+     |
+1118 |     assert_eq!(manager.watch_keys(m, &[KEY_W; 33]), Err(ManagerError::InvalidArgument));
+     |                        ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no variant, associated function, or constant named `InvalidArgument` found for enum `ManagerError` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1118:71
+     |
+1118 |     assert_eq!(manager.watch_keys(m, &[KEY_W; 33]), Err(ManagerError::InvalidArgument));
+     |                                                                       ^^^^^^^^^^^^^^^ variant, associated function, or constant not found in `ManagerError`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1119:21
+     |
+1119 |     assert!(manager.watch_keys(m, &[KEY_W; 32]).is_ok());
+     |                     ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1126:13
+     |
+1126 |     manager.watch_keys(m, &[KEY_W]).expect("claims Input");
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `watch_keys` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1128:13
+     |
+1128 |     manager.watch_keys(m, &[]).expect("claims Input");
+     |             ^^^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1140:24
+     |
+1140 |     assert_eq!(manager.send_key(m, KEY_SHIFT, true), Err(ManagerError::NotPermitted));
+     |                        ^^^^^^^^ method not found in `ManagerService`
+
+error[E0599]: no method named `send_key` found for struct `ManagerService` in the current scope
+    --> crates\amm-core\tests\services\manager\manager_service.rs:1150:24
+     |
+1150 |     assert_eq!(manager.send_key(m, KEY_SHIFT, true), Err(ManagerError::NotPermitted));
+     |                        ^^^^^^^^ method not found in `ManagerService`
+
+Some errors have detailed explanations: E0432, E0599.
+For more information about an error, try `rustc --explain E0432`.
+error: could not compile `amm-core` (test "integration") due to 46 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: command `'C:\Users\charl\.rustup\toolchains\1.98.0-x86_64-pc-windows-msvc\bin\cargo.exe' test --no-run --message-format json-render-diagnostics --workspace` exited with code 101
+[test] ERROR task failed

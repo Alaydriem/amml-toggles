@@ -1,0 +1,11 @@
+[check] $ cargo check --workspace --all-targets
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.10s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.24s
+[check] $ cargo check -p amm-client --no-default-features --features test-support
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.32s
+[check] $ cargo clippy -p amm-client --no-default-features --features test-support -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.31s
+[check] $ cargo fmt --check -p amm-core -p amm-abi -p amm-store -p amm-ui -p amm-client -p amm-ffi -p amm-overlay -p amm-amml -p amm-bench -p amm-e2e

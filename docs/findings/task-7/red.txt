@@ -1,0 +1,219 @@
+[test] $ cargo nextest run --workspace
+    Updating crates.io index
+     Locking 113 packages to latest Rust 1.98 compatible versions
+      Adding adler2 v2.0.1
+      Adding aho-corasick v1.1.5
+      Adding amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+      Adding amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+      Adding amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+      Adding amml-abi v0.1.0 (C:\Users\charl\projects\levi\amml\loader\abi)
+      Adding amml-game v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\game)
+      Adding amml-msvc v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\msvc)
+      Adding amml-sdk v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\sdk)
+      Adding android_log-sys v0.3.2
+      Adding android_logger v0.15.1
+      Adding android_system_properties v0.1.6
+      Adding arc-swap v1.9.3
+      Adding autocfg v1.5.1
+      Adding bitflags v2.13.2
+      Adding bumpalo v3.20.3
+      Adding bytemuck v1.25.2
+      Adding bytemuck_derive v1.12.1
+      Adding cc v1.10.0
+      Adding cfg-if v1.0.5
+      Adding chrono v0.4.45
+      Adding core-foundation-sys v0.8.7
+      Adding crc32fast v1.5.3
+      Adding curia v0.2.2
+      Adding deranged v0.5.9
+      Adding env_filter v0.1.4
+      Adding equivalent v1.0.3
+      Adding fastrand v2.5.0
+      Adding fdeflate v0.3.7
+      Adding find-msvc-tools v0.1.15
+      Adding flate2 v1.1.10
+      Adding flume v0.12.0
+      Adding fnv v1.0.7
+      Adding futures-core v0.3.34
+      Adding futures-sink v0.3.34
+      Adding futures-task v0.3.34
+      Adding futures-util v0.3.34
+      Adding getrandom v0.4.3
+      Adding hashbrown v0.17.1
+      Adding hcl-edit v0.9.7 (available: v0.9.9)
+      Adding hcl-primitives v0.1.13
+      Adding hcl-rs v0.19.8 (available: v0.19.10)
+      Adding iana-time-zone v0.1.65
+      Adding iana-time-zone-haiku v0.1.2
+      Adding indexmap v2.14.2
+      Adding itoa v1.0.18
+      Adding js-sys v0.3.107
+      Adding kstring v2.0.5
+      Adding lazy_static v1.5.1
+      Adding libc v0.2.191
+      Adding lock_api v0.4.14
+      Adding log v0.4.34
+      Adding memchr v2.8.3
+      Adding miniz_oxide v0.8.9
+      Adding miniz_oxide v0.9.1
+      Adding num-conv v0.2.2
+      Adding num-traits v0.2.19
+      Adding num_threads v0.1.8
+      Adding once_cell v1.21.4
+      Adding oslog v0.2.0
+      Adding pin-project-lite v0.2.17
+      Adding png v0.18.1
+      Adding powerfmt v0.2.1
+      Adding pratt v0.4.0
+      Adding proc-macro2 v1.0.107
+      Adding quote v1.0.47
+      Adding r-efi v6.0.0
+      Adding regex v1.13.1
+      Adding regex-automata v0.4.18
+      Adding regex-syntax v0.8.11
+      Adding rustversion v1.0.23
+      Adding ryu v1.0.23
+      Adding scopeguard v1.2.0
+      Adding serde v1.0.229
+      Adding serde_core v1.0.229
+      Adding serde_derive v1.0.229
+      Adding serde_json v1.0.154
+      Adding sharded-slab v0.1.7
+      Adding shlex v2.0.1
+      Adding simd-adler32 v0.3.10
+      Adding slab v0.4.12
+      Adding spin v0.9.9
+      Adding static_assertions v1.1.0
+      Adding syn v2.0.119
+      Adding syn v3.0.9
+      Adding thiserror v2.0.21
+      Adding thiserror-impl v2.0.21
+      Adding thread_local v1.1.10
+      Adding time v0.3.55
+      Adding time-core v0.1.9
+      Adding time-macros v0.2.32
+      Adding tracing v0.1.44
+      Adding tracing-attributes v0.1.31
+      Adding tracing-core v0.1.36
+      Adding tracing-log v0.2.0
+      Adding tracing-subscriber v0.3.23
+      Adding unicode-ident v1.0.27
+      Adding valuable v0.1.1
+      Adding vecmap-rs v0.2.5
+      Adding wasm-bindgen v0.2.130
+      Adding wasm-bindgen-macro v0.2.130
+      Adding wasm-bindgen-macro-support v0.2.130
+      Adding wasm-bindgen-shared v0.2.130
+      Adding windows-core v0.62.2
+      Adding windows-implement v0.60.2
+      Adding windows-interface v0.59.3
+      Adding windows-link v0.2.1
+      Adding windows-result v0.4.1
+      Adding windows-strings v0.5.1
+      Adding windows-sys v0.61.2
+      Adding winnow v1.0.4
+      Adding zlib-rs v0.6.8
+      Adding zmij v1.0.23
+ Downloading crates ...
+  Downloaded hcl-primitives v0.1.13
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.27
+   Compiling quote v1.0.47
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling thiserror v2.0.21
+   Compiling cfg-if v1.0.5
+   Compiling autocfg v1.5.1
+   Compiling itoa v1.0.18
+   Compiling simd-adler32 v0.3.10
+   Compiling once_cell v1.21.4
+   Compiling zmij v1.0.23
+   Compiling scopeguard v1.2.0
+   Compiling adler2 v2.0.1
+   Compiling crc32fast v1.5.3
+   Compiling lock_api v0.4.14
+   Compiling num-traits v0.2.19
+   Compiling tracing-core v0.1.36
+   Compiling ryu v1.0.23
+   Compiling lazy_static v1.5.1
+   Compiling time-core v0.1.9
+   Compiling rustversion v1.0.23
+   Compiling serde_json v1.0.154
+   Compiling num-conv v0.2.2
+   Compiling windows-link v0.2.1
+   Compiling sharded-slab v0.1.7
+   Compiling time-macros v0.2.32
+   Compiling syn v3.0.9
+   Compiling syn v2.0.119
+   Compiling spin v0.9.9
+   Compiling miniz_oxide v0.9.1
+   Compiling thread_local v1.1.10
+   Compiling memchr v2.8.3
+   Compiling log v0.4.34
+   Compiling hashbrown v0.17.1
+   Compiling fnv v1.0.7
+   Compiling futures-sink v0.3.34
+   Compiling fastrand v2.5.0
+   Compiling winnow v1.0.4
+   Compiling pratt v0.4.0
+   Compiling deranged v0.5.9
+   Compiling futures-core v0.3.34
+   Compiling equivalent v1.0.3
+   Compiling powerfmt v0.2.1
+   Compiling pin-project-lite v0.2.17
+   Compiling flume v0.12.0
+   Compiling indexmap v2.14.2
+   Compiling flate2 v1.1.10
+   Compiling tracing-log v0.2.0
+   Compiling time v0.3.55
+   Compiling tracing-subscriber v0.3.23
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.21
+   Compiling bytemuck_derive v1.12.1
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling bitflags v2.13.2
+   Compiling bytemuck v1.25.2
+   Compiling png v0.18.1
+   Compiling arc-swap v1.9.3
+   Compiling amml-abi v0.1.0 (C:\Users\charl\projects\levi\amml\loader\abi)
+   Compiling amml-msvc v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\msvc)
+   Compiling amml-sdk v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\sdk)
+   Compiling windows-sys v0.61.2
+   Compiling amml-game v0.1.0 (C:\Users\charl\projects\levi\amml\sdk\game)
+   Compiling tracing-attributes v0.1.31
+   Compiling tracing v0.1.44
+   Compiling vecmap-rs v0.2.5
+   Compiling hcl-primitives v0.1.13
+   Compiling chrono v0.4.45
+   Compiling hcl-edit v0.9.7
+   Compiling curia v0.2.2
+   Compiling hcl-rs v0.19.8
+   Compiling amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+error[E0583]: file not found for module `services`
+ --> toggles\amml\src\lib.rs:7:1
+  |
+7 | pub mod services;
+  | ^^^^^^^^^^^^^^^^^
+  |
+  = help: to create the module `services`, create file "toggles\amml\src\services.rs" or "toggles\amml\src\services\mod.rs"
+  = note: if there is a `mod services` elsewhere in the crate already, import it with `use crate::...` instead
+
+error[E0583]: file not found for module `toggles_mod`
+ --> toggles\amml\src\lib.rs:8:1
+  |
+8 | pub mod toggles_mod;
+  | ^^^^^^^^^^^^^^^^^^^^
+  |
+  = help: to create the module `toggles_mod`, create file "toggles\amml\src\toggles_mod.rs" or "toggles\amml\src\toggles_mod\mod.rs"
+  = note: if there is a `mod toggles_mod` elsewhere in the crate already, import it with `use crate::...` instead
+
+For more information about this error, try `rustc --explain E0583`.
+error: could not compile `toggles-amml` (lib test) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `toggles-amml` (lib) due to 2 previous errors
+error: command `'C:\Users\charl\.rustup\toolchains\1.98.0-x86_64-pc-windows-msvc\bin\cargo.exe' test --no-run --message-format json-render-diagnostics --workspace` exited with code 101
+[test] ERROR task failed

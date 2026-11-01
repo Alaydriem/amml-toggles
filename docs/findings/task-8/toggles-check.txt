@@ -1,0 +1,5 @@
+[check] $ cargo check --workspace --all-targets
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.30s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.33s
+[check] $ cargo fmt --all --check

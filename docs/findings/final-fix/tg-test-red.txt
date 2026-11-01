@@ -1,0 +1,72 @@
+[test] $ cargo nextest run --workspace
+   Compiling toggles-core v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\core)
+   Compiling amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+   Compiling amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.65s
+────────────
+ Nextest run ID f03dfb39-aa08-47e9-ae6f-401443447000 with nextest profile: default
+    Starting 43 tests across 4 binaries
+        PASS [   0.021s] ( 1/43) toggles-amml::integration services::descriptor::defaults_match_spec
+        PASS [   0.023s] ( 2/43) toggles-amml::integration services::settings_reader::unreadable_text_gives_the_defaults
+        PASS [   0.025s] ( 3/43) toggles-amml::integration services::settings_reader::shift_parses_to_game_code
+        PASS [   0.038s] ( 4/43) toggles-amml::integration services::descriptor::descriptor_passes_manager_checker
+        PASS [   0.038s] ( 5/43) toggles-amml::integration services::settings_reader::flags_are_read
+        PASS [   0.042s] ( 6/43) toggles-amml::integration services::settings_reader::bad_key_keeps_default
+        PASS [   0.048s] ( 7/43) toggles-amml::integration services::settings_reader::w_parses_to_0x57
+        FAIL [   0.053s] ( 8/43) toggles-amml::integration services::settings_reader::lshift_setting_normalises_to_shift
+  stdout ───
+
+    running 1 test
+    test services::settings_reader::lshift_setting_normalises_to_shift ... FAILED
+
+    failures:
+
+    failures:
+        services::settings_reader::lshift_setting_normalises_to_shift
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 24 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::settings_reader::lshift_setting_normalises_to_shift' (48960) panicked at toggles\amml\tests\services\settings_reader.rs:22:5:
+    assertion `left == right` failed
+      left: 160
+     right: 16
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+  Cancelling due to test failure: 7 tests still running
+        PASS [   0.041s] ( 9/43) toggles-amml::integration services::toggles_link::link_watches_cancel_and_sneak_keys
+        PASS [   0.048s] (10/43) toggles-amml::integration services::toggles_link::link_without_send_key_stays_off
+        PASS [   0.049s] (11/43) toggles-amml::integration services::toggles_runtime::a_refused_key_down_does_not_leave_the_toggle_on
+        FAIL [   0.039s] (12/43) toggles-amml::integration services::toggles_runtime::a_refused_walk_down_keeps_sneak_on
+  stdout ───
+
+    running 1 test
+    test services::toggles_runtime::a_refused_walk_down_keeps_sneak_on ... FAILED
+
+    failures:
+
+    failures:
+        services::toggles_runtime::a_refused_walk_down_keeps_sneak_on
+
+    test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 24 filtered out; finished in 0.00s
+
+  stderr ───
+
+    thread 'services::toggles_runtime::a_refused_walk_down_keeps_sneak_on' (15204) panicked at toggles\amml\tests\services\toggles_runtime.rs:162:5:
+    assertion `left == right` failed
+      left: [(16, true), (87, true), (16, true)]
+     right: [(16, true), (87, true), (16, false)]
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+        PASS [   0.046s] (13/43) toggles-amml::integration services::toggles_runtime::cancel_key_press_releases_walk
+        PASS [   0.047s] (14/43) toggles-amml::integration services::toggles_runtime::chord_event_sends_key_down
+        PASS [   0.076s] (15/43) toggles-amml::integration services::toggles_runtime::death_sends_key_up
+────────────
+     Summary [   0.125s] 15/43 tests run: 13 passed, 2 failed, 0 skipped
+        FAIL [   0.053s] ( 8/43) toggles-amml::integration services::settings_reader::lshift_setting_normalises_to_shift
+        FAIL [   0.039s] (12/43) toggles-amml::integration services::toggles_runtime::a_refused_walk_down_keeps_sneak_on
+warning: 28/43 tests were not run due to test failure (run with --no-fail-fast to run all tests, or run with --max-fail)
+error: test run failed
+[test] ERROR task failed

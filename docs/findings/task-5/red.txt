@@ -1,0 +1,8 @@
+mise ERROR unknown command: test
+
+Did you mean:
+  mise test-tool
+  mise latest
+  mise __publish-system-install
+mise ERROR Version: 2026.10.21 windows-x64 (2026-10-27)
+mise ERROR Run with --verbose or MISE_VERBOSE=1 for more information

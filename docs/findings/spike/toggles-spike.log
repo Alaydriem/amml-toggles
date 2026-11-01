@@ -1,0 +1,254 @@
+2026-10-30 20:42:37.358053100 UTC INFO  SPIKE enabled: hooks installed (onKeyDown, onKeyUp, ClientInstance.update) {"module":"toggles-spike"}
+2026-10-30 20:42:47.034779500 UTC INFO  SPIKE update hook thread id=36832 (was 0) {"module":"toggles-spike"}
+2026-10-30 20:44:45.556089900 UTC INFO  SPIKE real key down code=0x10 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:45.938260 UTC INFO  SPIKE real key down code=0x54 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.020750700 UTC INFO  SPIKE real key up code=0x10 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.028535500 UTC INFO  SPIKE real key up code=0x54 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.116406500 UTC INFO  SPIKE real key down code=0x4f origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.183473600 UTC INFO  SPIKE real key up code=0x4f this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.245629600 UTC INFO  SPIKE real key down code=0x47 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.303151 UTC INFO  SPIKE real key up code=0x47 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.361709500 UTC INFO  SPIKE real key down code=0x47 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.433632400 UTC INFO  SPIKE real key up code=0x47 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.437112700 UTC INFO  SPIKE real key down code=0x4c origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.507262700 UTC INFO  SPIKE real key up code=0x4c this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.536280600 UTC INFO  SPIKE real key down code=0x45 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.614157100 UTC INFO  SPIKE real key up code=0x45 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.699416300 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.744938 UTC INFO  SPIKE real key down code=0x20 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.778052800 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.802714 UTC INFO  SPIKE real key up code=0x20 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.827422600 UTC INFO  SPIKE real key down code=0x10 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.910383400 UTC INFO  SPIKE real key down code=0x54 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.933708100 UTC INFO  SPIKE real key up code=0x10 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:46.971469400 UTC INFO  SPIKE real key down code=0x45 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:46.987341100 UTC INFO  SPIKE real key up code=0x54 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.038057 UTC INFO  SPIKE real key up code=0x45 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.102323600 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.180090100 UTC INFO  SPIKE real key down code=0x54 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.211490900 UTC INFO  SPIKE real key down code=0x20 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.216737700 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.253849900 UTC INFO  SPIKE real key up code=0x54 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.286248300 UTC INFO  SPIKE real key up code=0x20 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.290238 UTC INFO  SPIKE real key down code=0x10 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.356061400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.364121100 UTC INFO  SPIKE real key up code=0x10 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.430414500 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.455057900 UTC INFO  SPIKE real key down code=0x4f origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.515221700 UTC INFO  SPIKE real key up code=0x4f this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.520794900 UTC INFO  SPIKE real key down code=0x52 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.593189400 UTC INFO  SPIKE real key up code=0x52 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.605285300 UTC INFO  SPIKE real key down code=0x4c origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.664195200 UTC INFO  SPIKE real key up code=0x4c this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:47.707835200 UTC INFO  SPIKE real key down code=0x44 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:47.782825600 UTC INFO  SPIKE real key up code=0x44 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:44:54.102989200 UTC INFO  SPIKE local player present, counting 200 ticks {"module":"toggles-spike"}
+2026-10-30 20:44:55.695354700 UTC INFO  SPIKE sequence start: shift code=0x10 (seen real=0x10) w code=0x57 {"module":"toggles-spike"}
+2026-10-30 20:44:55.695376200 UTC INFO  SPIKE phase Baseline begin {"module":"toggles-spike"}
+2026-10-30 20:44:55.697821700 UTC INFO  SPIKE Baseline t=0 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.732201800 UTC INFO  SPIKE Baseline t=20 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.769554400 UTC INFO  SPIKE Baseline t=40 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.808181200 UTC INFO  SPIKE Baseline t=60 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.847768400 UTC INFO  SPIKE Baseline t=80 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.881290900 UTC INFO  SPIKE phase ShiftDown begin {"module":"toggles-spike"}
+2026-10-30 20:44:55.881489500 UTC INFO  SPIKE fake Shift DOWN sent code=0x10 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:55.883140800 UTC INFO  SPIKE ShiftDown t=0 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.923192200 UTC INFO  SPIKE ShiftDown t=20 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:55.959626800 UTC INFO  SPIKE ShiftDown t=40 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.000438900 UTC INFO  SPIKE ShiftDown t=60 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.036520400 UTC INFO  SPIKE ShiftDown t=80 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.071994200 UTC INFO  SPIKE ShiftDown t=100 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.109769800 UTC INFO  SPIKE ShiftDown t=120 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.155564400 UTC INFO  SPIKE ShiftDown t=140 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.194545 UTC INFO  SPIKE ShiftDown t=160 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.232608600 UTC INFO  SPIKE ShiftDown t=180 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.568846200 UTC INFO  SPIKE phase ShiftUp begin {"module":"toggles-spike"}
+2026-10-30 20:44:56.568872300 UTC INFO  SPIKE fake Shift UP sent code=0x10 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:56.572029200 UTC INFO  SPIKE ShiftUp t=0 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:56.998510700 UTC INFO  SPIKE ShiftUp t=20 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:57.255924700 UTC INFO  SPIKE ShiftUp t=40 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:57.502680900 UTC INFO  SPIKE ShiftUp t=60 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:57.761871500 UTC INFO  SPIKE ShiftUp t=80 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:57.920740 UTC INFO  SPIKE phase WDown begin {"module":"toggles-spike"}
+2026-10-30 20:44:57.920948200 UTC INFO  SPIKE fake W DOWN sent code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:57.928484 UTC INFO  SPIKE WDown t=0 pos=(0.5000,81.6200,0.5000) head=(0.5000,81.6200,0.5000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.085186200 UTC INFO  SPIKE WDown t=20 pos=(0.5000,81.6200,0.9302) head=(0.5000,81.6200,0.7495) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.224857 UTC INFO  SPIKE WDown t=40 pos=(0.5000,81.6200,1.5424) head=(0.5000,81.6200,1.3323) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.359181900 UTC INFO  SPIKE WDown t=60 pos=(0.5000,81.6200,2.1842) head=(0.5000,81.6200,1.9693) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.508522800 UTC INFO  SPIKE WDown t=80 pos=(0.5000,81.6200,2.8309) head=(0.5000,81.6200,2.6152) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.661538300 UTC INFO  SPIKE WDown t=100 pos=(0.5000,81.6200,3.4783) head=(0.5000,81.6200,3.2625) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.813269200 UTC INFO  SPIKE WDown t=120 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:58.952713700 UTC INFO  SPIKE WDown t=140 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.080986100 UTC INFO  SPIKE WDown t=160 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.232535600 UTC INFO  SPIKE WDown t=180 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.379996400 UTC INFO  SPIKE phase WUp begin {"module":"toggles-spike"}
+2026-10-30 20:44:59.380016600 UTC INFO  SPIKE fake W UP sent code=0x57 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:44:59.387875700 UTC INFO  SPIKE WUp t=0 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.525221600 UTC INFO  SPIKE WUp t=20 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.663625400 UTC INFO  SPIKE WUp t=40 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.779723800 UTC INFO  SPIKE WUp t=60 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.884724100 UTC INFO  SPIKE WUp t=80 pos=(0.5000,81.6200,3.7000) head=(0.5000,81.6200,3.7000) eye(head.y-pos.y)=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.994032800 UTC INFO  SPIKE phase Done begin {"module":"toggles-spike"}
+2026-10-30 20:44:59.994053 UTC INFO  SPIKE done {"module":"toggles-spike"}
+2026-10-30 20:44:59.994060800 UTC INFO  SPIKE summary eye height (head.y-pos.y): baseline=0.0000 sneaking=0.0000 released=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.994069400 UTC INFO  SPIKE summary head.y: baseline=81.6200 sneaking=81.6200 released=81.6200 {"module":"toggles-spike"}
+2026-10-30 20:44:59.994072100 UTC INFO  SPIKE summary W held 200 ticks: horizontal distance=3.2000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.994074900 UTC INFO  SPIKE summary after W up 100 ticks: horizontal distance=0.0000 {"module":"toggles-spike"}
+2026-10-30 20:44:59.994078600 UTC INFO  SPIKE summary expectation: sneaking eye < baseline; released ~ baseline; W distance large; after W up small {"module":"toggles-spike"}
+2026-10-30 20:45:00.633044600 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:00.788682200 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:01.194469500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:01.290980700 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:01.677994500 UTC INFO  SPIKE real key down code=0x41 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:02.054043900 UTC INFO  SPIKE real key up code=0x41 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:02.313752300 UTC INFO  SPIKE real key down code=0x44 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:02.747180 UTC INFO  SPIKE real key up code=0x44 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:02.913770800 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:03.413371700 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:03.413768700 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:03.610510100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:03.980033100 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:07.240145100 UTC INFO  SPIKE real key down code=0x41 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:07.457559700 UTC INFO  SPIKE real key up code=0x41 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:07.570127100 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:07.920562700 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:08.071521300 UTC INFO  SPIKE real key down code=0x44 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:08.320382800 UTC INFO  SPIKE real key up code=0x44 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:08.502959700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:08.754514700 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:10.909924100 UTC INFO  SPIKE real key down code=0x12 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:12.397722200 UTC INFO  SPIKE real key down code=0x12 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:22.175150500 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:22.223349100 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:22.501578200 UTC INFO  SPIKE real key down code=0x70 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:22.578530300 UTC INFO  SPIKE real key up code=0x70 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:22.938944600 UTC INFO  SPIKE real key down code=0x41 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:22.958493600 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:23.098861100 UTC INFO  SPIKE real key up code=0x41 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:23.098952 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:24.183461100 UTC INFO  SPIKE real key down code=0x77 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:24.184825200 UTC INFO  SPIKE fake Shift (F8) DOWN sent code=0x10 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:24.271670100 UTC INFO  SPIKE real key up code=0x77 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:25.612400800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.111644400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.146576800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.180053200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.208992200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.241339800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.277551200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.308773300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.341242100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.373929200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.406984800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.439758900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.471981100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.506741300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.542911700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.571028 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.606775800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.640834400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.672861 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.707103600 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.737604400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.773504700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.806740100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.837102800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.869841400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.905041900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.936591100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:26.968451 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.000842300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.033957 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.068237300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.101661700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.135190 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.168033700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.201455400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.235903900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.266075800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.298904500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.332248900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.367523200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.401454900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.434521900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.462297100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.496822100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.530044400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.562857200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.597804500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.630179400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.665759300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.694854300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.731585800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.763492600 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.795282100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.825973800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.862508 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.892015 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.929282100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.957490600 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:27.990550500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.026140200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.056984800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.092044100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.121908300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.156403200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.192803600 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.224499500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.259535800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.292167800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.323929 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.355026500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.387208100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.423899800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.453093900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.488927600 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.519310700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.552915700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.590143100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.620112800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.656249300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.685467100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.719137300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.752739800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.786222700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.819996800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.850183500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.881383800 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.915717100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.949921400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:28.984191700 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.014725 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.049669400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.083289500 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.114731200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.146105400 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.178430900 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.213814300 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.247413100 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.247762300 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:29.492717100 UTC INFO  SPIKE real key down code=0x77 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.493722600 UTC INFO  SPIKE fake Shift (F8) UP sent code=0x10 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:29.582555900 UTC INFO  SPIKE real key up code=0x77 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:29.808980200 UTC INFO  SPIKE real key down code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.071100800 UTC INFO  SPIKE real key up code=0x57 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:30.228791 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.726698800 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.760958300 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.794143200 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.824636300 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.860333500 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.893260800 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.925064900 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.958485300 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:30.968679800 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:31.792448400 UTC INFO  SPIKE real key down code=0x78 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:31.793491 UTC INFO  SPIKE fake W (F9) DOWN sent code=0x57 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:31.891752800 UTC INFO  SPIKE real key up code=0x78 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:34.109783900 UTC INFO  SPIKE real key down code=0x78 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:34.110608 UTC INFO  SPIKE fake W (F9) UP sent code=0x57 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:34.199000300 UTC INFO  SPIKE real key up code=0x78 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:34.341532200 UTC INFO  SPIKE real key down code=0x53 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:34.506631600 UTC INFO  SPIKE real key up code=0x53 this=0x254422b6a40 tid=36832 passed {"module":"toggles-spike"}
+2026-10-30 20:45:34.727406800 UTC INFO  SPIKE real key down code=0x12 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}
+2026-10-30 20:45:54.034430100 UTC INFO  SPIKE real key down code=0x12 origin=1 this=0x254422b6a40 tid=36832 {"module":"toggles-spike"}

@@ -1,0 +1,54 @@
+[test] $ cargo nextest run --workspace
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling toggles-amml v0.1.0 (C:\Users\charl\projects\levi\toggles\toggles\amml)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.00s
+────────────
+ Nextest run ID 98f9b7c0-046f-4cec-a9a2-419d60594e91 with nextest profile: default
+    Starting 43 tests across 4 binaries
+        PASS [   0.044s] ( 1/43) toggles-amml::integration services::descriptor::descriptor_passes_manager_checker
+        PASS [   0.056s] ( 2/43) toggles-amml::integration services::settings_reader::unreadable_text_gives_the_defaults
+        PASS [   0.056s] ( 3/43) toggles-amml::integration services::settings_reader::w_parses_to_0x57
+        PASS [   0.067s] ( 4/43) toggles-amml::integration services::settings_reader::flags_are_read
+        PASS [   0.075s] ( 5/43) toggles-amml::integration services::settings_reader::lshift_setting_normalises_to_shift
+        PASS [   0.075s] ( 6/43) toggles-amml::integration services::descriptor::defaults_match_spec
+        PASS [   0.075s] ( 7/43) toggles-amml::integration services::settings_reader::shift_parses_to_game_code
+        PASS [   0.075s] ( 8/43) toggles-amml::integration services::settings_reader::bad_key_keeps_default
+        PASS [   0.026s] ( 9/43) toggles-amml::integration services::toggles_link::link_without_send_key_stays_off
+        PASS [   0.025s] (10/43) toggles-amml::integration services::toggles_runtime::a_refused_walk_down_keeps_sneak_on
+        PASS [   0.046s] (11/43) toggles-amml::integration services::toggles_link::link_watches_cancel_and_sneak_keys
+        PASS [   0.032s] (12/43) toggles-amml::integration services::toggles_runtime::chord_event_sends_key_down
+        PASS [   0.050s] (13/43) toggles-amml::integration services::toggles_runtime::a_refused_key_down_does_not_leave_the_toggle_on
+        PASS [   0.044s] (14/43) toggles-amml::integration services::toggles_runtime::enabled_event_rewatches
+        PASS [   0.061s] (15/43) toggles-amml::integration services::toggles_runtime::death_sends_key_up
+        PASS [   0.069s] (16/43) toggles-amml::integration services::toggles_runtime::detach_releases_held_keys_and_unregisters
+        PASS [   0.049s] (17/43) toggles-amml::integration services::toggles_runtime::first_tick_without_the_manager_turns_the_toggles_off
+        PASS [   0.056s] (18/43) toggles-amml::integration services::toggles_runtime::fake_keys_released_sends_nothing
+        PASS [   0.074s] (19/43) toggles-amml::integration services::toggles_runtime::cancel_key_press_releases_walk
+        PASS [   0.047s] (20/43) toggles-amml::integration services::toggles_runtime::focus_loss_and_world_exit_reset_on_the_next_tick
+        PASS [   0.049s] (21/43) toggles-amml::integration services::toggles_runtime::menu_open_sends_key_up
+        PASS [   0.052s] (22/43) toggles-amml::integration services::toggles_runtime::settings_change_rewatches
+        PASS [   0.042s] (23/43) toggles-amml::integration toggles_mod::a_missing_required_entry_installs_nothing
+        PASS [   0.045s] (24/43) toggles-amml::integration toggles_mod::every_entry_installs_every_hook
+        PASS [   0.048s] (25/43) toggles-core::integration services::toggle_controller::chord_ignored_outside_gameplay
+        PASS [   0.047s] (26/43) toggles-core::integration services::toggle_controller::chord_ignored_when_disabled
+        PASS [   0.059s] (27/43) toggles-core::integration config::toggles_config::default_matches_spec
+        PASS [   0.065s] (28/43) toggles-amml::integration toggles_mod::missing_optional_entries_turn_off_only_their_features
+        PASS [   0.067s] (29/43) toggles-core::integration services::toggle_controller::d_does_not_cancel_walk
+        PASS [   0.044s] (30/43) toggles-core::integration services::toggle_controller::disabling_walk_while_on_releases
+        PASS [   0.046s] (31/43) toggles-core::integration services::toggle_controller::focus_lost_always_resets
+        PASS [   0.056s] (32/43) toggles-core::integration services::toggle_controller::death_reset_respects_setting
+        PASS [   0.037s] (33/43) toggles-core::integration services::toggle_controller::forget_clears_only_that_kind
+        PASS [   0.035s] (34/43) toggles-core::integration services::toggle_controller::menu_reset_respects_setting
+        PASS [   0.044s] (35/43) toggles-core::integration services::toggle_controller::game_key_change_releases_old_key
+        PASS [   0.041s] (36/43) toggles-core::integration services::toggle_controller::manager_released_clears_without_commands
+        PASS [   0.029s] (37/43) toggles-core::integration services::toggle_controller::repeat_key_down_is_not_a_cancel
+        PASS [   0.033s] (38/43) toggles-core::integration services::toggle_controller::real_sneak_key_cancels_sneak
+        PASS [   0.028s] (39/43) toggles-core::integration services::toggle_controller::w_cancels_walk
+        PASS [   0.028s] (40/43) toggles-core::integration services::toggle_controller::s_cancels_walk
+        PASS [   0.036s] (41/43) toggles-core::integration services::toggle_controller::sneak_chord_turns_on_and_off
+        PASS [   0.032s] (42/43) toggles-core::integration services::toggle_controller::walk_chord_turns_on_and_off
+        PASS [   0.033s] (43/43) toggles-core::integration services::toggle_controller::world_exit_always_resets
+────────────
+     Summary [   0.279s] 43 tests run: 43 passed, 0 skipped

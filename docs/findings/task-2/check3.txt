@@ -1,0 +1,43 @@
+[check] $ cargo check --workspace --all-targets
+    Blocking waiting for file lock on build directory
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 11.15s
+[check] $ cargo clippy --workspace --all-targets -- -D warnings
+    Checking amm-amml v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-amml)
+    Checking amm-bench v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-bench)
+    Checking amm-overlay v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-overlay)
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.50s
+[check] $ cargo check -p amm-client --no-default-features --features test-support
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Checking amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.52s
+[check] $ cargo clippy -p amm-client --no-default-features --features test-support -- -D warnings
+    Checking amm-core v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core)
+    Checking amm-abi v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-abi)
+    Checking amm-client v0.1.0 (C:\Users\charl\projects\levi\modmanager-amml\crates\amm-client)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.23s
+[check] $ cargo fmt --check -p amm-core -p amm-abi -p amm-store -p amm-ui -p amm-client -p amm-ffi -p amm-overlay -p amm-amml -p amm-bench -p amm-e2e
+Diff in \\?\C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core\src\services\manager\manager_service.rs:12:
+ use crate::services::descriptor::DescriptorChecker;
+ use crate::services::event::EventHub;
+ use crate::services::icon::IconBook;
+[31m-use crate::services::input::{
+[0m[31m-    ChordMatcher, CursorSet, FakeKeys, GameViewportBook, InputRouter, KeyState, KeyWatch,
+[0m[31m-};
+[0m[32m+use crate::services::input::{ChordMatcher, CursorSet, FakeKeys, GameViewportBook, InputRouter, KeyState, KeyWatch};
+[0m use crate::services::lease::LeaseArbiter;
+ use crate::services::menu::MenuEntries;
+ use crate::services::registry::ModRegistry;
+Diff in \\?\C:\Users\charl\projects\levi\modmanager-amml\crates\amm-core\src\services\manager\manager_service.rs:756:
+         if vk >= InputEvent::VK_SLOTS as u32 {
+             return Err(ManagerError::InvalidArgument);
+         }
+[31m-        let other_exclusive =
+[0m[31m-            self.arbiter.exclusive_holder(Capability::Input).is_some_and(|holder| holder != index);
+[0m[32m+        let other_exclusive = self.arbiter.exclusive_holder(Capability::Input).is_some_and(|holder| holder != index);
+[0m         if self.panel.is_open() || other_exclusive {
+             return Err(ManagerError::NotPermitted);
+         }
+[check] ERROR task failed

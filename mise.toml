@@ -42,3 +42,10 @@ dir = "{{config_root}}"
 shell = "bash -c"
 # AMML finds a mod by the folder under mods/amml that holds its amml.hcl
 run = 'mkdir -p "${LM_MODS_DIR:?set LM_MODS_DIR in mise.local.toml}/amml/@alaydriem/toggles" && cp -r dist/@alaydriem/toggles/. "$LM_MODS_DIR/amml/@alaydriem/toggles/"'
+
+[tasks.package]
+description = "Builds the mod into dist/@alaydriem/toggles; that folder is the release artifact"
+depends = ["build-mod"]
+dir = "{{config_root}}"
+shell = "bash -c"
+run = 'ls -l dist/@alaydriem/toggles'

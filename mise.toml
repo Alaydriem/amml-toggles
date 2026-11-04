@@ -32,6 +32,7 @@ rm -rf dist/alaydriem-toggles dist/@alaydriem/toggles
 mkdir -p dist/@alaydriem/toggles
 cp target/release/alaydriem_toggles.dll dist/@alaydriem/toggles/alaydriem_toggles.dll
 cp toggles/amml/amml.hcl dist/@alaydriem/toggles/amml.hcl
+cp toggles/amml/icon.png dist/@alaydriem/toggles/icon.png
 echo "built dist/@alaydriem/toggles"
 '''
 

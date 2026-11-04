@@ -4,9 +4,9 @@
 
 # Alaydriem's Toggles
 
-[![Release](https://img.shields.io/github/v/release/alaydriem/toggles?include_prereleases)](https://github.com/alaydriem/toggles/releases)
-[![Build](https://img.shields.io/github/actions/workflow/status/alaydriem/toggles/build.yml?branch=master&label=build)](https://github.com/alaydriem/toggles/actions/workflows/build.yml)
-[![License](https://img.shields.io/github/license/alaydriem/toggles)](./LICENSE)
+[![Release](https://img.shields.io/github/v/release/alaydriem/amml-toggles?include_prereleases)](https://github.com/alaydriem/amml-toggles/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/alaydriem/amml-toggles/build.yml?branch=master&label=build)](https://github.com/alaydriem/amml-toggles/actions/workflows/build.yml)
+[![License](https://img.shields.io/github/license/alaydriem/amml-toggles)](./LICENSE)
 ![Minecraft Bedrock](https://img.shields.io/badge/Minecraft_Bedrock-1.26.60-62B47A)
 [![AMML](https://img.shields.io/badge/AMML-mod-4A90D9)](https://github.com/alaydriem/amml)
 
@@ -24,20 +24,7 @@ Client-side only.
 
 ## Installation
 
-Requires:
-
-- the **AMML loader**, which loads the mod into the game.
-- [Alaydriem's Mod Manager](https://github.com/alaydriem/modmanager), 26.60 build with ABI 2.1. Without the mod
-  manager the toggles stay off.
-
-Download the zip from the [latest release](https://github.com/alaydriem/toggles/releases/latest) and extract it.
-It holds the folder `@alaydriem/toggles`, with `alaydriem_toggles.dll` and `amml.hcl`. Put that folder in the AMML
-mods folder of the game, so that the files are in `mods/amml/@alaydriem/toggles/`. Then enable the mod in the mod
-manager.
-
-| Toggles | Minecraft Bedrock | Mod Manager |
-| --- | --- | --- |
-| 26.60.0 | 1.26.60 | ABI 2.1 |
+Install it with the [AMML launcher](https://github.com/alaydriem/amml/releases/latest). The launcher also installs the AMML loader and Alaydriem's Mod Manager, which this mod needs.
 
 ## Controls
 

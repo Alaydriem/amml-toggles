@@ -4,6 +4,7 @@ use alaydriem_toggles::services::ToggleRuntime;
 use alaydriem_toggles::types::LinkState;
 use amm_client::test_support::FakeTable;
 use amm_core::structs::event::{KeybindPhase, ModEvent};
+use amml_sdk::HookHandle;
 
 use crate::support::fake_game::FakeGame;
 
@@ -181,4 +182,32 @@ fn first_tick_without_the_manager_turns_the_toggles_off() {
     let runtime = ToggleRuntime::new(Path::new(FakeTable::CONFIG_DIR));
 
     assert_eq!(runtime.attach_with(Err(amm_core::errors::LinkError::ManagerMissing)), LinkState::Off);
+}
+
+#[test]
+fn hooks_past_the_capacity_are_refused_and_the_first_are_kept() {
+    let runtime = ToggleRuntime::new(Path::new(FakeTable::CONFIG_DIR));
+    let capacity = ToggleRuntime::HOOK_CAPACITY as u64;
+
+    for id in 1..=capacity {
+        assert!(runtime.keep_hook(HookHandle(id)));
+    }
+    assert!(!runtime.keep_hook(HookHandle(capacity + 1)));
+    assert!(!runtime.keep_hook(HookHandle(capacity + 2)));
+
+    let expected: Vec<HookHandle> = (1..=capacity).rev().map(HookHandle).collect();
+    assert_eq!(runtime.take_hooks(), expected);
+}
+
+#[test]
+fn taking_the_hooks_frees_the_capacity() {
+    let runtime = ToggleRuntime::new(Path::new(FakeTable::CONFIG_DIR));
+    for id in 1..=ToggleRuntime::HOOK_CAPACITY as u64 {
+        assert!(runtime.keep_hook(HookHandle(id)));
+    }
+
+    assert_eq!(runtime.take_hooks().len(), ToggleRuntime::HOOK_CAPACITY);
+
+    assert!(runtime.keep_hook(HookHandle(100)));
+    assert_eq!(runtime.take_hooks(), [HookHandle(100)]);
 }

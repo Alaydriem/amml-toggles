@@ -73,16 +73,16 @@ Minecraft's controls, set `keys.game_sneak` and `keys.game_forward` to match.
 
 ## Building
 
-Requires Windows x64, [mise](https://mise.jdx.dev), rustup and [cargo-nextest](https://nexte.st). The `amml` and `modmanager-amml` repos must sit next to this one.
+Requires Windows x64, [mise](https://mise.jdx.dev), rustup and [cargo-nextest](https://nexte.st). No sibling checkout is needed: cargo fetches `amml` and `amml-modmanager` at the release tag named in `Cargo.toml`.
 
 ```powershell
 mise trust
 mise run preflight
-mise run build-mod
+mise run package
 mise run test
 ```
 
-`mise run build-mod` writes `dist/@alaydriem/toggles`. `mise run install-mod` copies it into `LM_MODS_DIR/amml/@alaydriem/toggles` (set `LM_MODS_DIR` to the game's `mods` folder in `mise.local.toml`).
+`mise run package` writes `dist/@alaydriem/toggles/`. `mise run install [--instance <name>]` runs `package`, then copies it into `%LOCALAPPDATA%\amml\instances\<name>\mods\amml\@alaydriem\toggles\` (default instance `1.26.60.05`). Close the game first.
 
 ## License
 

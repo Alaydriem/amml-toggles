@@ -26,12 +26,12 @@ impl GameClient {
     // keeps the first non-null client; later calls change nothing
     pub fn capture(&self, client: usize) {
         if client != 0 {
-            let _ = self.client.compare_exchange(0, client, Ordering::AcqRel, Ordering::Acquire);
+            let _ = self.client.compare_exchange(0, client, Ordering::Relaxed, Ordering::Relaxed);
         }
     }
 
     pub fn client(&self) -> usize {
-        self.client.load(Ordering::Acquire)
+        self.client.load(Ordering::Relaxed)
     }
 
     // None before the first update or without the entries

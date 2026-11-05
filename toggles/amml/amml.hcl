@@ -2,6 +2,7 @@ namespace   = "alaydriem"
 name        = "toggles"
 entry       = "alaydriem_toggles.dll"
 api_version = 2
+amml_version = "26.60.6"
 entries = [
   "ClientInstance.update",
   "ClientInstance.getMouseGrabbed",

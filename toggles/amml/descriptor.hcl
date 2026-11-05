@@ -1,7 +1,7 @@
 namespace    = "alaydriem"
 name         = "toggles"
 display_name = "Toggles"
-version      = "26.60.6"
+version      = "26.62.0"
 author       = "Alaydriem"
 config_path  = "config.hcl"
 

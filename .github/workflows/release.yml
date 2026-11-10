@@ -35,4 +35,4 @@ jobs:
       namespace: alaydriem
       name: toggles
       package_task: package
-      descriptor: toggles/amml/descriptor.hcl
+      descriptor: src/amml/descriptor.hcl

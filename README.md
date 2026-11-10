@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/icon.png" alt="Toggles" width="256">
+<img src="./assets/readme.png" alt="Toggles" width="256">
 
 # Alaydriem's Toggles
 
@@ -69,7 +69,7 @@ mise run package
 mise run test
 ```
 
-`mise run package` writes `dist/@alaydriem/toggles/`. `mise run install [--instance <name>]` runs `package`, then copies it into `%LOCALAPPDATA%\amml\instances\<name>\mods\amml\@alaydriem\toggles\` (default instance `1.26.60.05`). Close the game first.
+`mise run package` writes `dist/@alaydriem/toggles/`. `mise run install --instance <name>` runs `package`, then copies it into `%LOCALAPPDATA%\amml\instances\<name>\mods\amml\@alaydriem\toggles\`. Close the game first.
 
 ## License
 

@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["toggles/core", "toggles/amml"]
+members = ["src/core", "src/amml"]
 
 [workspace.package]
 version = "26.62.0"
@@ -19,7 +19,7 @@ amml-game = { git = "https://github.com/Alaydriem/amml.git", tag = "26.62.0" }
 curia = "=0.2.2"
 hcl-rs = "=0.19.8"
 serde = { version = "1.0.229", features = ["derive"] }
-toggles-core = { path = "toggles/core" }
+toggles-core = { path = "src/core" }
 
 [workspace.lints.clippy]
 unwrap_used = "deny"

@@ -1,4 +1,4 @@
-use amm_core::services::settings::ChordText;
+use amml_api::Chord;
 use serde::Deserialize;
 use toggles_core::config::TogglesConfig;
 
@@ -29,7 +29,9 @@ struct RawKeys {
     cancel_walk_2: Option<String>,
 }
 
-// turns the checked config.hcl into a TogglesConfig: each key setting is a chord text and its key is the game code
+// turns the checked config.hcl into a TogglesConfig: each key setting is a chord text and its key is the generic game
+// code, so a left or right Shift, Ctrl or Alt setting matches the key the loader injects and the side code a key
+// event reports
 pub struct SettingsReader;
 
 impl SettingsReader {
@@ -44,21 +46,11 @@ impl SettingsReader {
         }
     }
 
-    // the manager routes the left and right Shift, Ctrl and Alt keys as the generic code
-    fn normalise(vk: u32) -> u32 {
-        match vk {
-            0xA0 | 0xA1 => 0x10,
-            0xA2 | 0xA3 => 0x11,
-            0xA4 | 0xA5 => 0x12,
-            other => other,
-        }
-    }
-
     pub fn convert(raw: &RawSettings) -> TogglesConfig {
         let defaults = TogglesConfig::default();
         let key = |name: &str, text: &Option<String>, default: u32| match text {
             None => default,
-            Some(text) => ChordText::parse(text).map(|chord| Self::normalise(chord.key)).unwrap_or_else(|| {
+            Some(text) => Chord::parse(text).map(|chord| u32::from(chord.key.generic().0)).unwrap_or_else(|_| {
                 curia::warn!("key setting is not a key; keeping the default", { setting: name, value: text.clone() });
                 default
             }),

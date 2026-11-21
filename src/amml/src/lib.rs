@@ -1,14 +1,14 @@
-//! @alaydriem/toggles as an AMML mod: hooks the client update, focus loss and level exit, reads the manager's
-//! events and the game state, and drives toggles-core with them. The keys are sent through the mod manager.
+//! @alaydriem/toggles as an AMML mod: listens to the loader's client tick, key, focus, world leave and injected
+//! input events, reads the manager's keybinds and settings, drives toggles-core with them and holds the game keys
+//! through one loader input lease.
 
 #![deny(unsafe_code)]
 
-pub mod detours;
+#[forbid(unsafe_code)]
 pub mod services;
+#[forbid(unsafe_code)]
 pub mod toggles_mod;
-pub mod traits;
-pub mod types;
 
 pub use toggles_mod::TogglesMod;
 
-amml_sdk::amml_mod!(TogglesMod);
+amml_api::amml_mod!(TogglesMod);

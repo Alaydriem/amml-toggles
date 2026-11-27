@@ -1,71 +1,201 @@
-use std::path::Path;
-
 use alaydriem_toggles::TogglesMod;
-use alaydriem_toggles::services::ToggleRuntime;
-use amm_client::test_support::FakeTable;
-use amml_sdk::{AmmlMod, SdkError};
+use amm_client::link::LinkUses;
+use amml_api::{AmmlMod, Area};
 
-use crate::support::fake_host::FakeHost;
+use crate::support::toggles_rig::TogglesRig;
 
-const REQUIRED: [(&str, u64); 2] = [(TogglesMod::UPDATE, 0x1000), (TogglesMod::MOUSE_GRABBED, 147)];
+const W: u16 = 0x57;
+const S: u16 = 0x53;
+const LSHIFT: u16 = 0xA0;
 
-fn runtime() -> ToggleRuntime {
-    ToggleRuntime::new(Path::new(FakeTable::CONFIG_DIR))
+#[test]
+fn walk_chord_presses_the_forward_key() {
+    let rig = TogglesRig::new();
+
+    rig.chord(TogglesRig::WALK);
+
+    assert!(rig.logged("info toggles linked"));
+    assert!(rig.logged("info toggle on kind=walk key=0x57"));
+    assert_eq!(rig.injected(), ["key 0x57 down"]);
 }
 
 #[test]
-fn the_mod_id_is_the_namespaced_id_and_amml_hcl_names_the_same_parts() {
-    let document: hcl::Value = hcl::from_str(include_str!("../amml.hcl")).unwrap();
-    let hcl::Value::Object(map) = document else { panic!("the document is not an object") };
+fn second_chord_lets_the_key_go() {
+    let rig = TogglesRig::new();
 
-    assert_eq!(TogglesMod::id(), "@alaydriem/toggles");
-    assert_eq!(TogglesMod::id(), TogglesMod::MODULE);
-    assert_eq!(map.get("namespace").and_then(hcl::Value::as_str), Some(TogglesMod::NAMESPACE));
-    assert_eq!(map.get("name").and_then(hcl::Value::as_str), Some(TogglesMod::NAME));
+    rig.chord(TogglesRig::WALK);
+    rig.chord(TogglesRig::WALK);
+
+    assert!(rig.logged("info toggle off kind=walk reason=chord"));
+    assert_eq!(rig.injected(), ["key 0x57 down", "key 0x57 up"]);
 }
 
 #[test]
-fn every_entry_installs_every_hook() {
-    let mut entries = REQUIRED.to_vec();
-    entries.extend([
-        (TogglesMod::FOCUS_LOST, 0x4000),
-        (TogglesMod::LEVEL_EXIT, 0x6000),
-        (TogglesMod::GET_LOCAL_PLAYER, 150),
-        (TogglesMod::IS_ALIVE, 20),
-    ]);
-    let host = FakeHost::new(&entries);
+fn injected_echo_keeps_the_walk_on() {
+    let rig = TogglesRig::new();
 
-    TogglesMod::enable_with(&host, &runtime()).unwrap();
+    rig.chord(TogglesRig::WALK);
+    rig.tick();
+    rig.game.frame();
 
-    assert_eq!(host.hooked(), [TogglesMod::FOCUS_LOST, TogglesMod::LEVEL_EXIT, TogglesMod::UPDATE]);
-    assert!(host.warnings().is_empty());
+    assert!(rig.lines("toggle off").is_empty());
 }
 
 #[test]
-fn missing_optional_entries_turn_off_only_their_features() {
-    let host = FakeHost::new(&REQUIRED);
+fn cancel_key_ends_the_walk() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::WALK);
 
-    TogglesMod::enable_with(&host, &runtime()).unwrap();
+    rig.tap(S);
 
-    assert_eq!(host.hooked(), [TogglesMod::UPDATE]);
-    let warnings = host.warnings();
-    assert_eq!(warnings.len(), 3);
-    assert!(warnings.iter().any(|line| line.contains("the reset on focus loss")));
-    assert!(warnings.iter().any(|line| line.contains("the reset on leaving the world")));
-    assert!(warnings.iter().any(|line| line.contains("the reset on death")));
+    assert!(rig.logged("info toggle off kind=walk reason=cancel_key"));
+    assert_eq!(rig.injected(), ["key 0x57 down", "key 0x57 up"]);
 }
 
 #[test]
-fn a_missing_required_entry_installs_nothing() {
-    let host = FakeHost::new(&[(TogglesMod::UPDATE, 0x1000)]);
+fn real_side_shift_ends_the_sneak() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::SNEAK);
 
-    let result = TogglesMod::enable_with(&host, &runtime());
+    rig.tap(LSHIFT);
 
-    assert!(result.is_err());
-    assert!(host.hooked().is_empty());
+    assert!(rig.logged("info toggle on kind=sneak key=0x10"));
+    assert!(rig.logged("info toggle off kind=sneak reason=real_key"));
+}
 
-    let host = FakeHost::new(&[(TogglesMod::MOUSE_GRABBED, 147)]);
-    let result = TogglesMod::enable_with(&host, &runtime());
-    assert!(matches!(result, Err(SdkError::MissingEntry(id)) if id == TogglesMod::UPDATE));
-    assert!(host.hooked().is_empty());
+#[test]
+fn consumed_chord_key_is_no_cancel_key() {
+    let rig = TogglesRig::consuming(W);
+    rig.chord(TogglesRig::WALK);
+
+    rig.game.real_key(W, true);
+    rig.tick();
+
+    assert!(rig.lines("toggle off").is_empty());
+}
+
+#[test]
+fn menu_ends_the_toggles() {
+    let mut rig = TogglesRig::new();
+    rig.chord(TogglesRig::WALK);
+
+    rig.set_client(|client| client.mouse_captured = Some(false));
+    rig.tick();
+
+    assert!(rig.logged("info toggle off kind=walk reason=menu"));
+}
+
+#[test]
+fn menu_keeps_the_toggles_when_reset_on_menu_is_off() {
+    let mut rig = TogglesRig::with_config("toggles {\n  reset_on_menu = false\n}\n");
+    rig.chord(TogglesRig::WALK);
+
+    rig.set_client(|client| client.mouse_captured = Some(false));
+    rig.tick();
+
+    assert!(rig.lines("toggle off").is_empty());
+}
+
+#[test]
+fn death_ends_the_toggles() {
+    let mut rig = TogglesRig::with_config("toggles {\n  reset_on_menu = false\n}\n");
+    rig.chord(TogglesRig::WALK);
+
+    rig.set_client(|client| client.player_alive = Some(false));
+    rig.tick();
+
+    assert!(rig.logged("info death check ready alive=true"));
+    assert!(rig.logged("info toggle off kind=walk reason=death"));
+}
+
+#[test]
+fn death_check_without_the_area_changes_nothing() {
+    let mut rig = TogglesRig::new();
+    rig.game.withdraw_area(Area::ACTOR_READ);
+    rig.chord(TogglesRig::WALK);
+
+    rig.set_client(|client| client.player_alive = Some(false));
+    rig.tick();
+
+    assert!(rig.lines("toggle off").is_empty());
+}
+
+#[test]
+fn focus_loss_ends_the_toggles() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::WALK);
+
+    rig.focus_lost();
+
+    assert!(rig.logged("info toggle off kind=walk reason=focus_lost"));
+}
+
+#[test]
+fn world_leave_ends_the_toggles() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::SNEAK);
+
+    rig.world_left();
+
+    assert!(rig.logged("info toggle off kind=sneak reason=world_left"));
+}
+
+#[test]
+fn real_up_of_one_held_key_ends_only_that_toggle() {
+    let rig = TogglesRig::with_config("keys {\n  cancel_walk_1 = \"A\"\n  cancel_walk_2 = \"D\"\n}\n");
+    rig.chord(TogglesRig::SNEAK);
+    rig.chord(TogglesRig::WALK);
+
+    rig.tap(W);
+
+    assert!(rig.logged("info toggle off kind=walk reason=released"));
+    assert_eq!(rig.lines("toggle off").len(), 1);
+}
+
+#[test]
+fn disable_lets_the_keys_go() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::WALK);
+
+    rig.game.disable::<TogglesMod>();
+    rig.game.frame();
+
+    assert!(rig.logged("info toggle off kind=walk reason=disabled"));
+    assert_eq!(rig.injected(), ["key 0x57 down", "key 0x57 up"]);
+}
+
+#[test]
+fn refused_key_leaves_the_toggle_off() {
+    let rig = TogglesRig::new();
+    rig.game.withdraw_area(Area::KEY_INJECT);
+
+    rig.chord(TogglesRig::WALK);
+    rig.chord(TogglesRig::WALK);
+
+    assert_eq!(rig.lines("key refused kind=walk").len(), 2);
+    assert!(rig.lines("toggle on").is_empty());
+    assert!(rig.injected().is_empty());
+}
+
+#[test]
+fn uses_hold_every_row_of_the_manager_link() {
+    assert!(LinkUses::check(&TogglesMod::USES).is_ok());
+}
+
+#[test]
+fn manifest_uses_block_matches_uses() {
+    let manifest = include_str!("../amml.hcl").replace("\r\n", "\n");
+
+    assert_eq!(TogglesMod::USES.write_into(&manifest), manifest);
+}
+
+#[test]
+fn manager_disable_ends_the_toggles() {
+    let rig = TogglesRig::new();
+    rig.chord(TogglesRig::SNEAK);
+
+    rig.manager_event(amm_core::structs::event::ModEvent::Disabled);
+
+    assert!(rig.logged("info toggle off kind=sneak reason=disabled"));
+    assert_eq!(rig.injected(), ["key 0x10 down", "key 0x10 up"]);
 }

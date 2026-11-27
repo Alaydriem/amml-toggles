@@ -1,253 +1,207 @@
-use std::path::{Path, PathBuf};
-use std::sync::atomic::{AtomicU8, Ordering};
-use std::sync::{Mutex, OnceLock, PoisonError};
-
-use amm_abi::types::AmmStatus;
-use amm_client::link::ApiTable;
-use amm_core::errors::LinkError;
+use amm_client::link::LinkState;
 use amm_core::structs::event::{KeybindPhase, ModEvent};
-use amml_sdk::{HookHandle, ModRuntime};
+use amml_api::amml_abi::AmmlReleaseReason;
+use amml_api::{Input, KeyCode, Logger};
 use toggles_core::config::TogglesConfig;
 use toggles_core::services::ToggleController;
 use toggles_core::structs::{ResetCause, ToggleInput, ToggleKind};
 
-use crate::services::{GameClient, TogglesLink};
-use crate::traits::GameView;
-use crate::types::LinkState;
+use crate::services::{KeyHolds, TogglesLink, TogglesLog};
 
-// the manager link, the toggle state and the settings of one attach; they live and go together
-struct Active {
-    link: TogglesLink,
+// the toggle state of one enable: the manager link, the controller and its settings, the held game keys and the
+// log. The listeners share it behind one lock; every listener runs on the game thread, so the lock is not contended
+pub struct TogglesRuntime {
+    link: Option<TogglesLink>,
     controller: ToggleController,
     config: TogglesConfig,
+    holds: KeyHolds,
+    log: TogglesLog,
+    configured: bool,
+    in_gameplay: bool,
 }
 
-impl Active {
-    fn new(link: TogglesLink) -> Self {
-        let config = link.config().clone();
-        Self { link, controller: ToggleController::new(), config }
-    }
-
-    // gives one input to the controller and sends the keys it asks for. A key-down the manager refuses leaves
-    // nothing held, so the controller forgets that toggle
-    fn apply(&mut self, input: ToggleInput, in_gameplay: bool) {
-        let commands = self.controller.apply(input, in_gameplay, &self.config);
-        for command in commands {
-            if !self.link.send(command) && command.down {
-                self.forget_refused(command.vk);
-            }
-        }
-    }
-
-    // the toggle whose game key is `vk` holds nothing, so only that toggle is cleared
-    fn forget_refused(&mut self, vk: u32) {
-        for (kind, key) in
-            [(ToggleKind::Sneak, self.config.game_sneak_key), (ToggleKind::Walk, self.config.game_forward_key)]
-        {
-            if key == vk {
-                self.controller.forget(kind);
-            }
-        }
-    }
-
-    fn is_on(&self) -> bool {
-        self.controller.is_on(ToggleKind::Sneak) || self.controller.is_on(ToggleKind::Walk)
-    }
-}
-
-// what the hooks share: the game client, the manager link state, the queued resets and the installed hooks.
-// The mod manager is reached on the first ClientInstance::update after enable, when every mod of the host
-// has loaded; `hooks` holds at most HOOK_CAPACITY handles
-pub struct ToggleRuntime {
-    client: GameClient,
-    config_dir: PathBuf,
-    link_state: AtomicU8,
-    active: Mutex<Option<Active>>,
-    pending: AtomicU8,
-    hooks: Mutex<Vec<HookHandle>>,
-}
-
-static RUNTIME: OnceLock<ToggleRuntime> = OnceLock::new();
-
-impl ToggleRuntime {
-    pub const HOOK_CAPACITY: usize = 8;
-
+impl TogglesRuntime {
     // the keybinds of the descriptor, in order
     const SNEAK_ACTION: u16 = 0;
     const WALK_ACTION: u16 = 1;
 
-    const FOCUS_LOST: u8 = 1;
-    const WORLD_EXIT: u8 = 2;
-
-    pub fn new(config_dir: &Path) -> Self {
+    pub fn new(link: TogglesLink, input: Input, log: Logger) -> Self {
         Self {
-            client: GameClient::new(),
-            config_dir: config_dir.to_path_buf(),
-            link_state: AtomicU8::new(LinkState::Waiting.to_u8()),
-            active: Mutex::new(None),
-            pending: AtomicU8::new(0),
-            hooks: Mutex::new(Vec::with_capacity(Self::HOOK_CAPACITY)),
+            link: Some(link),
+            controller: ToggleController::new(),
+            config: TogglesConfig::default(),
+            holds: KeyHolds::new(input),
+            log: TogglesLog::new(log),
+            configured: false,
+            in_gameplay: false,
         }
     }
 
-    // the runtime of this DLL; the first call wins
-    pub fn install(config_dir: &Path) -> &'static ToggleRuntime {
-        RUNTIME.get_or_init(|| Self::new(config_dir))
-    }
-
-    pub fn get() -> Option<&'static ToggleRuntime> {
-        RUNTIME.get()
-    }
-
-    pub fn client(&self) -> &GameClient {
-        &self.client
-    }
-
-    pub fn link_state(&self) -> LinkState {
-        LinkState::from_u8(self.link_state.load(Ordering::SeqCst))
-    }
-
-    // enable: the next tick reaches the manager again
-    pub fn enable_link(&self) {
-        self.link_state.store(LinkState::Waiting.to_u8(), Ordering::SeqCst);
-    }
-
-    // once per ClientInstance::update on the game thread, after the original: keeps the client, reaches the
-    // manager on the first call after enable, then handles the manager's events and the game state
-    pub fn tick(&self, client: usize) {
-        self.client.capture(client);
-        self.tick_with(&self.client);
-    }
-
-    pub fn tick_with<G: GameView>(&self, game: &G) {
-        if self.link_state() == LinkState::Waiting {
-            self.attach_with(ApiTable::resolve());
+    // once per client tick: reads the settings once the link is connected, then the manager's events, then the menu
+    // and death checks. `alive` is the local player's state, `None` when it cannot be read (no player, no area)
+    pub fn tick(&mut self, in_gameplay: bool, alive: Option<bool>) {
+        self.in_gameplay = in_gameplay;
+        let Some(link) = self.link.as_mut() else { return };
+        let state = link.state();
+        if state == LinkState::Connected && !self.configured {
+            self.configured = true;
+            self.config = link.settings();
+            self.log.linked();
         }
-        if self.link_state() == LinkState::Attached {
-            self.run(game);
+        let events = link.drain();
+        for event in events {
+            self.event(event);
+        }
+        if state == LinkState::Gone && self.link.is_some() {
+            self.stop("manager_gone");
+        }
+        if !in_gameplay {
+            self.apply(ToggleInput::Reset(ResetCause::Menu), |_| "menu");
+        }
+        if let Some(alive) = alive {
+            self.log.alive(alive);
+        }
+        if alive == Some(false) {
+            self.apply(ToggleInput::Reset(ResetCause::Death), |_| "death");
         }
     }
 
-    // registers with the manager the table belongs to; on failure the toggles stay off and one line is logged.
-    // Only a Waiting runtime takes the result: if disable ran meanwhile, a new link is dropped again
-    pub fn attach_with(&self, table: Result<ApiTable, LinkError>) -> LinkState {
-        let state = match table.and_then(|table| TogglesLink::new(table, &self.config_dir)) {
-            Ok(link) => {
-                *self.active.lock().unwrap_or_else(PoisonError::into_inner) = Some(Active::new(link));
-                curia::info!("@alaydriem/toggles attached to the mod manager");
-                LinkState::Attached
+    // a real key down the game gets: a cancel key ends auto-walk, the game sneak key ends sneak
+    pub fn key_down(&mut self, key: KeyCode) {
+        let vk = u32::from(key.generic().0);
+        self.apply(ToggleInput::KeyDown { vk, repeat: false }, |kind| match kind {
+            ToggleKind::Walk => "cancel_key",
+            ToggleKind::Sneak => "real_key",
+        });
+    }
+
+    pub fn focus_lost(&mut self) {
+        self.apply(ToggleInput::Reset(ResetCause::FocusLost), |_| "focus_lost");
+    }
+
+    pub fn world_left(&mut self) {
+        self.apply(ToggleInput::Reset(ResetCause::WorldExit), |_| "world_left");
+        self.log.world_left();
+    }
+
+    // the loader released injected input of `lease`: one key (`key`, after a real up or a key reset of the game) or
+    // every input. Only the toggles whose keys went up turn off; the game has the keys up already
+    pub fn released(&mut self, lease: u64, reason: AmmlReleaseReason, key: Option<KeyCode>) {
+        if !self.holds.owns(lease) {
+            return;
+        }
+        let why = Self::release_reason(reason);
+        if let Some(key) = key {
+            let vk = u32::from(key.generic().0);
+            for kind in [ToggleKind::Sneak, ToggleKind::Walk] {
+                if self.controller.is_on(kind) && self.game_key(kind) == vk {
+                    self.controller.forget(kind);
+                    self.log.off(kind, why);
+                }
             }
-            Err(error) => {
-                Self::log_link_error(&error);
-                LinkState::Off
+            self.holds.forget(vk);
+            return;
+        }
+        self.apply(ToggleInput::ManagerReleased, |_| why);
+        self.holds.forget_all();
+    }
+
+    // the loader lost `lease`: its keys are up in the game
+    pub fn lease_lost(&mut self, lease: u64) {
+        if self.holds.owns(lease) {
+            self.apply(ToggleInput::ManagerReleased, |_| "released");
+            self.holds.forget_all();
+        }
+    }
+
+    // disable: the keys go up, the lease ends and the link closes
+    pub fn detach(&mut self) {
+        self.apply(ToggleInput::Reset(ResetCause::Disabled), |_| "disabled");
+        self.holds.forget_all();
+        self.link = None;
+    }
+
+    // whether the toggles hold the input lease now
+    pub fn has_lease(&self) -> bool {
+        self.holds.has_lease()
+    }
+
+    fn event(&mut self, event: ModEvent) {
+        match event {
+            ModEvent::Keybind { action, phase: KeybindPhase::Pressed } => {
+                let kind = match action {
+                    Self::SNEAK_ACTION => ToggleKind::Sneak,
+                    Self::WALK_ACTION => ToggleKind::Walk,
+                    _ => return,
+                };
+                self.apply(ToggleInput::Chord(kind), |_| "chord");
             }
-        };
-        let waiting = LinkState::Waiting.to_u8();
-        match self.link_state.compare_exchange(waiting, state.to_u8(), Ordering::SeqCst, Ordering::SeqCst) {
-            Ok(_) => state,
-            Err(current) => {
-                if state == LinkState::Attached {
-                    drop(self.active.lock().unwrap_or_else(PoisonError::into_inner).take());
+            ModEvent::SettingsChanged { .. } => {
+                if let Some(link) = &self.link {
+                    self.config = link.settings();
                 }
-                LinkState::from_u8(current)
+                self.apply(ToggleInput::ConfigChanged, |_| "config");
+            }
+            ModEvent::Disabled => self.apply(ToggleInput::Reset(ResetCause::Disabled), |_| "disabled"),
+            ModEvent::ManagerGone => self.stop("manager_gone"),
+            _ => {}
+        }
+    }
+
+    // the manager is gone: the keys go up and the toggles stay off until the next enable
+    fn stop(&mut self, reason: &'static str) {
+        self.apply(ToggleInput::Reset(ResetCause::Disabled), |_| reason);
+        self.holds.forget_all();
+        self.link = None;
+        self.log.stopped(reason);
+    }
+
+    // runs one input through the controller, presses and releases the keys it asks for and logs each toggle that
+    // went on or off. A key the loader refuses holds nothing, so that toggle is forgotten
+    fn apply(&mut self, input: ToggleInput, reason: impl Fn(ToggleKind) -> &'static str) {
+        let before = self.on_state();
+        let commands = self.controller.apply(input, self.in_gameplay, &self.config);
+        for command in commands {
+            if !command.down {
+                self.holds.release(command.vk);
+                continue;
+            }
+            if let Err(error) = self.holds.press(command.vk) {
+                for kind in [ToggleKind::Sneak, ToggleKind::Walk] {
+                    if self.controller.is_on(kind) && self.game_key(kind) == command.vk {
+                        self.controller.forget(kind);
+                        self.log.refused(kind, &error.to_string());
+                    }
+                }
             }
         }
-    }
-
-    // disable: the keys go up and the mod unregisters; no tick reaches the manager until the next enable
-    pub fn detach(&self) {
-        self.link_state.store(LinkState::Disabled.to_u8(), Ordering::SeqCst);
-        let taken = self.active.lock().unwrap_or_else(PoisonError::into_inner).take();
-        if let Some(mut active) = taken {
-            active.apply(ToggleInput::Reset(ResetCause::Disabled), false);
-        }
-    }
-
-    // the focus-loss and level-exit detours: the reset is made on the next tick, on the game thread
-    pub fn queue_reset(&self, cause: ResetCause) {
-        let bit = match cause {
-            ResetCause::FocusLost => Self::FOCUS_LOST,
-            ResetCause::WorldExit => Self::WORLD_EXIT,
-            ResetCause::Menu | ResetCause::Death | ResetCause::Disabled => return,
-        };
-        self.pending.fetch_or(bit, Ordering::SeqCst);
-    }
-
-    // keeps an installed hook; false, keeping nothing, when HOOK_CAPACITY hooks are already kept
-    pub fn keep_hook(&self, hook: HookHandle) -> bool {
-        let mut hooks = self.hooks.lock().unwrap_or_else(PoisonError::into_inner);
-        if hooks.len() >= Self::HOOK_CAPACITY {
-            return false;
-        }
-        hooks.push(hook);
-        true
-    }
-
-    // the installed hooks, newest first, leaving none behind
-    pub fn take_hooks(&self) -> Vec<HookHandle> {
-        let mut hooks = self.hooks.lock().unwrap_or_else(PoisonError::into_inner);
-        let mut taken = std::mem::take(&mut *hooks);
-        taken.reverse();
-        taken
-    }
-
-    fn run<G: GameView>(&self, game: &G) {
-        let Ok(mut slot) = self.active.lock() else { return };
-        let Some(active) = slot.as_mut() else { return };
-        let in_gameplay = game.in_gameplay();
-        for event in active.link.drain() {
-            match event {
-                ModEvent::Keybind { action, phase: KeybindPhase::Pressed } => {
-                    let kind = match action {
-                        Self::SNEAK_ACTION => ToggleKind::Sneak,
-                        Self::WALK_ACTION => ToggleKind::Walk,
-                        _ => continue,
-                    };
-                    active.apply(ToggleInput::Chord(kind), in_gameplay);
-                }
-                ModEvent::Key { vk, down: true, repeat } => {
-                    active.apply(ToggleInput::KeyDown { vk, repeat }, in_gameplay)
-                }
-                ModEvent::FakeKeysReleased => active.apply(ToggleInput::ManagerReleased, in_gameplay),
-                ModEvent::SettingsChanged { .. } => {
-                    active.config = active.link.reload().clone();
-                    active.apply(ToggleInput::ConfigChanged, in_gameplay);
-                }
-                ModEvent::Enabled => active.link.rewatch(),
-                ModEvent::Disabled => active.apply(ToggleInput::Reset(ResetCause::Disabled), in_gameplay),
+        let after = self.on_state();
+        for (index, kind) in [ToggleKind::Sneak, ToggleKind::Walk].into_iter().enumerate() {
+            match (before[index], after[index]) {
+                (false, true) => self.log.on(kind, self.game_key(kind)),
+                (true, false) => self.log.off(kind, reason(kind)),
                 _ => {}
             }
         }
-        let pending = self.pending.swap(0, Ordering::SeqCst);
-        if pending & Self::FOCUS_LOST != 0 {
-            active.apply(ToggleInput::Reset(ResetCause::FocusLost), in_gameplay);
-        }
-        if pending & Self::WORLD_EXIT != 0 {
-            active.apply(ToggleInput::Reset(ResetCause::WorldExit), in_gameplay);
-        }
-        if !in_gameplay {
-            active.apply(ToggleInput::Reset(ResetCause::Menu), in_gameplay);
-        }
-        if active.is_on() && game.player_alive() == Some(false) {
-            active.apply(ToggleInput::Reset(ResetCause::Death), in_gameplay);
+    }
+
+    fn on_state(&self) -> [bool; 2] {
+        [self.controller.is_on(ToggleKind::Sneak), self.controller.is_on(ToggleKind::Walk)]
+    }
+
+    fn game_key(&self, kind: ToggleKind) -> u32 {
+        match kind {
+            ToggleKind::Sneak => self.config.game_sneak_key,
+            ToggleKind::Walk => self.config.game_forward_key,
         }
     }
 
-    fn log_link_error(error: &LinkError) {
-        let Some(runtime) = ModRuntime::get() else { return };
-        let unsupported = LinkError::from(AmmStatus::Unsupported);
-        match error {
-            LinkError::ManagerMissing | LinkError::AbiMismatch { .. } => {
-                runtime.logger().error("@alaydriem/toggles needs @amml/modmanager 0.2.x; toggles are off");
-            }
-            other if *other == unsupported => {
-                runtime.logger().warn("@amml/modmanager is too old to send keys; update it. Toggles are off");
-            }
-            other => {
-                runtime
-                    .logger()
-                    .error(&format!("@amml/modmanager refused @alaydriem/toggles ({other}); toggles are off"));
-            }
+    fn release_reason(reason: AmmlReleaseReason) -> &'static str {
+        match reason {
+            AmmlReleaseReason::FOCUS_LOST => "focus_lost",
+            AmmlReleaseReason::WORLD_LEFT => "world_left",
+            AmmlReleaseReason::DISABLED => "disabled",
+            _ => "released",
         }
     }
 }

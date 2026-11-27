@@ -53,7 +53,7 @@ impl TogglesRig {
             player_alive: Some(true),
             ..FakeClient::default()
         };
-        game.set_client(client);
+        game.set_client(client.clone());
         let rig = Self { game, client, _consumer: consumer };
         rig.tick();
         rig
@@ -62,7 +62,7 @@ impl TogglesRig {
     // the client the game reports from the next tick on
     pub fn set_client(&mut self, change: impl FnOnce(&mut FakeClient)) {
         change(&mut self.client);
-        self.game.set_client(self.client);
+        self.game.set_client(self.client.clone());
     }
 
     pub fn tick(&self) {
